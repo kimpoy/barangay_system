@@ -455,10 +455,29 @@
           </select>
         </div>
         <div class="form-group">
-          <input type="text" name="address" id="address" class="form-control" placeHolder="Address" required>
+          <label for="address">purok:</label>
+          <select name="address" id="address" required>
+            <option disabled selected></option>
+            <option value="purok1">Purok 1</option>
+            <option value="purok2">Purok 2</option>
+            <option value="purok3">Purok 3</option>
+            <option value="purok4">Purok 4</option>
+            <option value="purok5">Purok 5</option>
+          </select>
         </div>
         <div class="form-group">
-          <input type="text" name="sector" id="sector" class="form-control" placeHolder="Sector" required>
+          <label for="sector">sector:</label>
+          <select name="sector" id="sector" required>
+            <option disabled selected></option>
+            <option value="labor">LABOR FORCE</option>
+            <option value="unemployed">UNEMPLOYED</option>
+            <option value="osy">OUT OF SCHOOL YOUTH (OSY)</option>
+            <option value="osc">OUT OF SCHOOL CHILDREN (OSC)</option>
+            <option value="pwd">PWD</option>
+            <option value="ofw">OFW</option>
+            <option value="solo">SOLO PARENTS</option>
+            <option value="ips">INDIGENOUS PEOPLE (IPs)</option>
+          </select>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary" name="submit-purok-ranking">Register</button>
@@ -498,10 +517,29 @@
           </select>
         </div>
         <div class="form-group">
-          <input type="text" name="address" id="address_purok" class="form-control" placeHolder="Address" required>
+          <label for="address">purok:</label>
+          <select name="address" id="address" required>
+            <option disabled selected></option>
+            <option value="purok1">Purok 1</option>
+            <option value="purok2">Purok 2</option>
+            <option value="purok3">Purok 3</option>
+            <option value="purok4">Purok 4</option>
+            <option value="purok5">Purok 5</option>
+          </select>
         </div>
         <div class="form-group">
-          <input type="text" name="sector" id="sector_purok" class="form-control" placeHolder="Sector" required>
+          <label for="sector">sector:</label>
+          <select name="sector" id="sector" required>
+            <option disabled selected></option>
+            <option value="labor">LABOR FORCE</option>
+            <option value="unemployed">UNEMPLOYED</option>
+            <option value="osy">OUT OF SCHOOL YOUTH (OSY)</option>
+            <option value="osc">OUT OF SCHOOL CHILDREN (OSC)</option>
+            <option value="pwd">PWD</option>
+            <option value="ofw">OFW</option>
+            <option value="solo">SOLO PARENTS</option>
+            <option value="ips">INDIGENOUS PEOPLE (IPs)</option>
+          </select>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary" name="update-purok-ranking">Update</button>

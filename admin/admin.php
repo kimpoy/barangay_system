@@ -303,10 +303,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 1</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 1</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -425,10 +429,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 2</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 2</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -549,9 +557,14 @@ if (isset($_SESSION['added_error'])) {
                   }
 
 
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 3</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 3</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -672,9 +685,14 @@ if (isset($_SESSION['added_error'])) {
                   }
 
 
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 4</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 4</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -794,10 +812,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 5</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 5</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -900,6 +922,7 @@ if (isset($_SESSION['added_error'])) {
                   $counter14=0;
                   $counter15=0;
                   $counter16=0;
+                 
                   while ($row = $result->fetch_assoc()){
                     if($row['sector'] == 'labor' && $row['gender']=='male' && $row['address']=='purok1'){
                       $counter1++;
@@ -943,20 +966,25 @@ if (isset($_SESSION['added_error'])) {
                     else if($row['sector'] == 'solo' && $row['gender']=='female' && $row['address']=='purok1'){
                       $counter14++;
                     }
-                    else if($row['sector'] == 'ips' && $row['gender']=='female' && $row['address']=='purok1'){
+                    else if($row['sector'] == 'ips' && $row['gender']=='male' && $row['address']=='purok1'){
                       $counter15++;
                     }
-                    else if($row['sector'] == 'ips' && $row['gender']=='male' && $row['address']=='purok1'){
+                    else if($row['sector'] == 'ips' && $row['gender']=='female' && $row['address']=='purok1'){
                       $counter16++;
                     }
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13 + $counter15;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14 + $counter16;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 1</h1></center>
-                <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
+                <div class="d-flex justify-content-between">
+                <h2>Purok 1</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
+                
+                <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all; overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
                           <th style="width:10%"></th>
@@ -1087,10 +1115,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13 + $counter15;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14 + $counter16;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 2</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 2</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -1223,10 +1255,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13 + $counter15;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14 + $counter16;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 3</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 3</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -1359,10 +1395,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13 + $counter15;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14 + $counter16;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 4</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 4</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
@@ -1495,10 +1535,14 @@ if (isset($_SESSION['added_error'])) {
                     
                   }
 
-
+                  $male = $counter1 + $counter3 + $counter5 + $counter7 + $counter9 + $counter11 + $counter13 + $counter15;
+                  $female = $counter2 + $counter4 + $counter6 + $counter8 + $counter10 + $counter12 + $counter14 + $counter16;
                   ?>
                 <!-- TABLE -->
-                <center><h1>Purok 5</h1></center>
+                <div class="d-flex justify-content-between">
+                <h2>Purok 5</h2>
+                <h2>Male:<?php echo $male ?> Female:<?php echo $female ?></h2>
+                </div>
                 <table class="table table-responsive table-light table-striped table-bordered" style="overflow:scroll; height:65vh; word-break: break-all;   overflow-x: hidden; ">
                       <thread>
                         <tr class="bg-dark text-white">
