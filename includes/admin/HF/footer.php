@@ -2,7 +2,7 @@
     <script src="../includes/admin/scripts/search-table-script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Modal Script -->
-    <script src="../includes/admin/scripts/modals-script.js"></script>\
+    <script src="../includes/admin/scripts/modals-script.js"></script>
     <script src="../includes/scripts/alert_close.js"></script>
     <!-- View Graph Script -->
     <?php require_once '../includes/admin/view/graph.php' ?>

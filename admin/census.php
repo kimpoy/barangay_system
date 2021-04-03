@@ -25,6 +25,8 @@ require_once '../includes/crud/delete_form.php';
 require_once '../includes/crud/edit_form.php';
 /* Modals */
 require_once '../includes/admin/modals/modals.php';
+/* REQUEST PROCESS FOR GRAPH */
+require_once '../includes/admin/processes/request_process.php';
 ?>
 
 <!-- MESSAGES FOR CRUD OPERATION ------------------------------------------>
@@ -43,6 +45,19 @@ if (isset($_SESSION['added_error'])) {
 }
 ?>
 
+<div class="list-group list-group-horizontal mt-3" id="myList" role="tablist" style="width: 99%; margin:auto;">
+  <a class="list-group-item list-group-item-action" id="list-census-list" data-toggle="list" href="#list-census" role="tab" aria-controls="census">Total</a>
+  <a class="list-group-item list-group-item-action " id="list-census-weekly-list" data-toggle="list" href="#list-census-weekly" role="tab" aria-controls="census-weekly">Weekly</a>
+  <a class="list-group-item list-group-item-action " id="list-census-monthly-list" data-toggle="list" href="#list-census-monthly" role="tab" aria-controls="census-monthly">Monthly</a>
+  <a class="list-group-item list-group-item-action " id="list-census-yearly-list" data-toggle="list" href="#list-census-yearly" role="tab" aria-controls="census-yearly">Yearly</a>
+</div>
+
+
+ <!-- TAB CONTENTS -->
+ <div class="tab-content" id="nav-tabContent" style="width: 99%;">
+
+<!-- TOTAL ---------------------------------------------->
+<div class="tab-pane fade " id="list-census" role="tabpanel" aria-labelledby="list-census-list">
 <div class="container col-12 mt-3" style="width: 99%;">
     <?php
     $mysqli = new mysqli('localhost', 'root', '', 'brgydb') or die(mysqli_error($mysqli));
@@ -97,6 +112,75 @@ if (isset($_SESSION['added_error'])) {
         </table>
     </div>
 </div>
+</div>
+
+<!-- Weekly ---------------------------------------------->
+<div class="tab-pane fade " id="list-census-weekly" role="tabpanel" aria-labelledby="list-census-weekly-list">
+ <!-- TABLE -->
+ <table class="table table-responsive table-light table-striped table-bordered w-75 mt-3" style="overflow:scroll; height:65vh; word-break: break-all; overflow-x: hidden; margin:auto; ">
+                    <thread>
+                        <tr class="bg-dark text-white">
+                            <th style="width:10%">Name</th>
+                            <th style="width:10%">Census Weekly</th>
+                        </tr>
+                    </thread>
+
+                        <tbody id="adminTable">
+                            <tr>
+                                <td style="width:10%">Census</td>
+                                <td style="width:10%"><?php echo $census_week_max; ?></td>
+                            </tr>
+                        </tbody>
+                </table>
+                <!-- END TABLE -->
+</div>
+
+<!-- MONTH ---------------------------------------------->
+<div class="tab-pane fade " id="list-census-monthly" role="tabpanel" aria-labelledby="list-census-monthly-list">
+ <!-- TABLE -->
+ <table class="table table-responsive table-light table-striped table-bordered w-75 mt-3" style="overflow:scroll; height:65vh; word-break: break-all; overflow-x: hidden; margin:auto; ">
+                    <thread>
+                        <tr class="bg-dark text-white">
+                            <th style="width:10%">Name</th>
+                            <th style="width:10%">Census Monthly</th>
+                        </tr>
+                    </thread>
+
+                        <tbody id="adminTable">
+                            <tr>
+                                <td style="width:10%">Census</td>
+                                <td style="width:10%"><?php echo $census_month_max; ?></td>
+                            </tr>
+                        </tbody>
+                </table>
+                <!-- END TABLE -->
+</div>
+
+<!-- YEAR -->
+<div class="tab-pane fade " id="list-census-yearly" role="tabpanel" aria-labelledby="list-census-yearly-list">
+ <!-- TABLE -->
+ <table class="table table-responsive table-light table-striped table-bordered w-75 mt-3" style="overflow:scroll; height:65vh; word-break: break-all; overflow-x: hidden; margin:auto; ">
+                    <thread>
+                        <tr class="bg-dark text-white">
+                            <th style="width:10%">Name</th>
+                            <th style="width:10%">Census Yearly</th>
+                        </tr>
+                    </thread>
+
+                        <tbody id="adminTable">
+                            <tr>
+                                <td style="width:10%">Census</td>
+                                <td style="width:10%"><?php echo $census_year_max; ?></td>
+                            </tr>
+                        </tbody>
+                </table>
+                <!-- END TABLE -->
+</div>
+</div>
+</div>
+</div>
+
+
 
 
 <?php require_once '../includes/admin/HF/footer.php'; ?>

@@ -118,6 +118,66 @@
     })
 </script>
 
+<!-- SCRIPT FOR WEEKLY REQUEST GRAPH -->
+<script>
+    let ctx_weekly = document.getElementById('myChart4').getContext('2d');
+    let labels_weekly = <?php echo json_encode($weekly_request_key) ?>;
+    let data_weekly = <?php echo json_encode($weekly_request_value) ?>;
+    let colorHex_weekly = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#eb4034', '#34eb56'];
+
+    let myChart4 = new Chart(ctx_weekly, {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: data_weekly,
+                backgroundColor: colorHex_weekly
+            }],
+            labels: labels_weekly
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'bottom'
+            },
+            plugins: {
+                datalabels: {
+                    color: '#fff',
+                    anchor: 'end',
+                    align: 'start',
+                    borderWidth: 2,
+                    /*         borderColor: '#fff', */
+                    borderRadius: 25,
+                    backgroundColor: (context) => {
+                        return context.dataset.backgroundColor;
+                    },
+                    font: {
+                        weight: 'bold',
+                        size: '16'
+                    },
+                    formatter: (value) => {
+                        return value + ' %';
+                    }
+                }
+            },
+            title: {
+                text: "Weekly Request <?php echo array_sum($weekly_request); ?>",
+                display: true,
+                fontSize: 30,
+                position: 'bottom'
+            },
+
+            legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                    fontSize: 15
+
+                }
+            }
+        }
+    })
+</script>
+
 <!-- SCRIPT FOR YEARLY REQUEST GRAPH -->
 <script>
     let ctx2 = document.getElementById('myChart3').getContext('2d');
@@ -203,6 +263,41 @@
             },
             title: {
                 text: "Most Requested",
+                display: true,
+                fontSize: 30
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+</script>
+
+<!-- SCRIPT FOR WEEKLY MOST REQUESTED GRAPH -->
+<script>
+    let te = <?php echo json_encode($weekly_most_requested_key) ?>;
+    let val = <?php echo json_encode($weekly_most_requested_value) ?>;
+    let hu = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#eb4034', '#34eb56'];
+
+    let bar4 = document.getElementById("bar4").getContext('2d');
+
+    let chart5 = new Chart(bar4, {
+        type: 'bar',
+        data: {
+            labels: te,
+            datasets: [{
+                data: val,
+                backgroundColor: hu
+            }]
+        },
+        options: {
+            plugins: {
+                datalabels: {
+                    display: false
+                }
+            },
+            title: {
+                text: "Most Requested Weekly",
                 display: true,
                 fontSize: 30
             },
