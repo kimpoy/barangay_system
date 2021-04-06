@@ -567,10 +567,29 @@
 
       <form class="m-3" action="#" method="post">
         <div class="form-group">
-          <input type="text" name="fullname" id="fullname" class="form-control" placeHolder="Fullname" required>
+          <input type="text" name="firstname" id="firstname" class="form-control" placeHolder="First Name" required>
+          <input type="text" name="lastname" id="lastname" class="form-control" placeHolder="Last Name" required>
+          <input type="text" name="middlename" id="middlename" class="form-control" placeHolder="Middle Name" required>
         </div>
         <div class="form-group">
-          <input type="text" name="address" id="address" class="form-control" placeHolder="Address" required>
+          <h3>Address</h3>
+          <input type="text" name="no" id="no" class="form-control" placeHolder="No." required>
+          <input type="text" name="street" id="street" class="form-control" placeHolder="Street" required>
+        </div>
+        <div class="form-group">
+          <label for="sub">purok:</label>
+          <select name="sub" id="sub" required>
+            <option disabled selected></option>
+            <option value="purok1">Purok 1</option>
+            <option value="purok2">Purok 2</option>
+            <option value="purok3">Purok 3</option>
+            <option value="purok4">Purok 4</option>
+            <option value="purok5">Purok 5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="city" id="city" class="form-control" placeHolder="City/Municipality" required>
+          <input type="text" name="province" id="province" class="form-control" placeHolder="Province" required>
         </div>
         <div class="form-group">
           <input type="text" name="dateofbirth" id="dateofbirth" class="form-control" placeHolder="Date of Birth" required>
@@ -622,10 +641,28 @@
       <form class="m-3" action="#" method="post">
         <input type="hidden" name="update_id" id="update_id_census" value="<?php echo $id; ?>">
         <div class="form-group">
-          <input type="text" name="fullname" id="fullname_census" class="form-control" placeHolder="Fullname" required>
+          <input type="text" name="firstname" id="firstname_census" class="form-control" placeHolder="First Name" required>
+          <input type="text" name="lastname" id="lastname_census" class="form-control" placeHolder="Last Name" required>
+          <input type="text" name="middlename" id="middlename_census" class="form-control" placeHolder="Middle Name" required>
         </div>
         <div class="form-group">
-          <input type="text" name="address" id="address_census" class="form-control" placeHolder="Address" required>
+          <input type="text" name="no" id="no_census" class="form-control" placeHolder="No." required>
+          <input type="text" name="street" id="street_census" class="form-control" placeHolder="Street" required>
+        </div>
+        <div class="form-group">
+          <label for="sub">purok:</label>
+          <select name="sub" id="sub" required>
+            <option disabled selected></option>
+            <option value="purok1">Purok 1</option>
+            <option value="purok2">Purok 2</option>
+            <option value="purok3">Purok 3</option>
+            <option value="purok4">Purok 4</option>
+            <option value="purok5">Purok 5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="city" id="city_census" class="form-control" placeHolder="City/Municipality" required>
+          <input type="text" name="province" id="province_census" class="form-control" placeHolder="Province" required>
         </div>
         <div class="form-group">
           <input type="text" name="dateofbirth" id="dateofbirth_census" class="form-control" placeHolder="Date of Birth" required>

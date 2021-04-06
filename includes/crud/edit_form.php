@@ -175,8 +175,14 @@ if (isset($_POST['update-purok-ranking'])) {
 
 /* UPDATE CENSUS----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-census'])) {
-  $fullname = $_POST['fullname'];
-  $address = $_POST['address'];
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $middlename = $_POST['middlename'];
+  $no = $_POST['no'];
+  $street = $_POST['street'];
+  $sub = $_POST['sub'];
+  $city = $_POST['city'];
+  $province = $_POST['province'];
   $dateofbirth = $_POST['dateofbirth'];
   $placeofbirth = $_POST['placeofbirth'];
   $sex = $_POST['sex'];
@@ -186,7 +192,7 @@ if (isset($_POST['update-census'])) {
   $relationship = $_POST['relationship'];
   $id = $_POST['update_id'];
 
-  $conn->query("UPDATE census SET fullname='$fullname', address='$address', dateofbirth='$dateofbirth', placeofbirth='$placeofbirth', sex='$sex', civilstatus='$civilstatus', occupation='$occupation', citizenship='$citizenship', relationship='$relationship' WHERE id='$id'") or die($conn->error());
+  $conn->query("UPDATE census SET firstname='$firstname',lastname='$lastname',middlename='$middlename',no='$no',street='$street',sub='$sub',city='$city',province='$province', dateofbirth='$dateofbirth', placeofbirth='$placeofbirth', sex='$sex', civilstatus='$civilstatus', occupation='$occupation', citizenship='$citizenship', relationship='$relationship' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
   header("Location: census.php");
   exit();

@@ -46,7 +46,7 @@ if (isset($_POST['submit-med'])) {
         header("Location: user_index.php");
         exit();
     } else {
-        $sql = "INSERT INTO medical (fullname, work, purpose, month) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO medical (fullname, work, purpose, date) VALUES (?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -54,7 +54,7 @@ if (isset($_POST['submit-med'])) {
             header("Location: user_index.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssss", $fullname, $work, $purpose, date("m"));
+            mysqli_stmt_bind_param($stmt, "ssss", $fullname, $work, $purpose, date('Y-m-d'));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: user_index.php");
@@ -244,7 +244,7 @@ if (isset($_POST['submit-med-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO medical (fullname, work, purpose, month, year) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO medical (fullname, work, purpose, date) VALUES (?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -252,7 +252,7 @@ if (isset($_POST['submit-med-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "sssss", $fullname, $work, $purpose, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "ssss", $fullname, $work, $purpose, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -279,7 +279,7 @@ if (isset($_POST['submit-scho-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO scholarship (fullname, mother, workMother, father, workFather, earnings, month, year) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO scholarship (fullname, mother, workMother, father, workFather, earnings, date) VALUES (?,?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -287,7 +287,7 @@ if (isset($_POST['submit-scho-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssssssss", $fullname, $mother, $workMother, $father, $workFather, $earnings, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "sssssss", $fullname, $mother, $workMother, $father, $workFather, $earnings, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -312,7 +312,7 @@ if (isset($_POST['submit-business-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO business (bname, loc, operator, addr, month, year) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO business (bname, loc, operator, addr, date) VALUES (?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -320,7 +320,7 @@ if (isset($_POST['submit-business-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssssss", $bname, $loc, $operator, $addr, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "sssss", $bname, $loc, $operator, $addr, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -342,7 +342,7 @@ if (isset($_POST['submit-residency-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO residency (fullname, month, year) VALUES (?,?,?)";
+        $sql = "INSERT INTO residency (fullname, date) VALUES (?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -350,7 +350,7 @@ if (isset($_POST['submit-residency-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "sss", $fullname, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "ss", $fullname, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -379,7 +379,7 @@ if (isset($_POST['submit-brgy-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO brgyClearance (fullname, age, abroad, loc, scholarship, policeClearance, nbi, loanPurposes, month, year) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO brgyClearance (fullname, age, abroad, loc, scholarship, policeClearance, nbi, loanPurposes, date) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -387,7 +387,7 @@ if (isset($_POST['submit-brgy-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssssssssss", $fullname, $age, $abroad, $loc, $scholarship, $policeClearance, $nbi, $loanPurposes, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "sssssssss", $fullname, $age, $abroad, $loc, $scholarship, $policeClearance, $nbi, $loanPurposes, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -409,7 +409,7 @@ if (isset($_POST['submit-appointments-admin'])) {
         header("Location: admin.php");
         exit();
     } else {
-        $sql = "INSERT INTO appointments (textInputs, month, year) VALUES (?,?,?)";
+        $sql = "INSERT INTO appointments (textInputs, date) VALUES (?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -417,7 +417,7 @@ if (isset($_POST['submit-appointments-admin'])) {
             header("Location: admin.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "sss", $textInputs, date("m"), date("Y"));
+            mysqli_stmt_bind_param($stmt, "ss", $textInputs, date("Y-m-d"));
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: admin.php");
@@ -466,8 +466,14 @@ if (isset($_POST['submit-purok-ranking'])) {
 
 /* CENSUS */
 if (isset($_POST['submit-census'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $address = strtolower($_POST['address']);
+    $firstname = strtolower($_POST['firstname']);
+    $lastname = strtolower($_POST['lastname']);
+    $middlename = strtolower($_POST['middlename']);
+    $no = strtolower($_POST['no']);
+    $street = strtolower($_POST['street']);
+    $sub = strtolower($_POST['sub']);
+    $city = strtolower($_POST['city']);
+    $province = strtolower($_POST['province']);
     $dateofbirth = strtolower($_POST['dateofbirth']);
     $placeofbirth = strtolower($_POST['placeofbirth']);
     $sex = strtolower($_POST['sex']);
@@ -484,7 +490,7 @@ if (isset($_POST['submit-census'])) {
         header("Location: census.php");
         exit();
     } else {
-        $sql = "INSERT INTO census (fullname, address, dateofbirth, placeofbirth, sex, civilstatus, occupation, citizenship, relationship) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO census (firstname, lastname, middlename, no, street, sub, city, province, dateofbirth, placeofbirth, sex, civilstatus, occupation, citizenship, relationship) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -492,7 +498,7 @@ if (isset($_POST['submit-census'])) {
             header("Location: census.php");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "sssssssss", $fullname, $address, $dateofbirth, $placeofbirth, $sex, $civilstatus, $occupation, $citizenship, $relationship);
+            mysqli_stmt_bind_param($stmt, "sssssssssssssss", $firstname, $lastname, $middlename, $no, $street, $sub, $city, $province, $dateofbirth, $placeofbirth, $sex, $civilstatus, $occupation, $citizenship, $relationship);
             mysqli_stmt_execute($stmt);
             $_SESSION['added'] = "Item has been added!";
             header("Location: census.php");

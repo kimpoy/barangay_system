@@ -1,6 +1,7 @@
 <?php
 
-if (isset($_POST['submit'])) {
+
+if (isset($_POST['submit']) && $_POST['type'] == 'user') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $account_type = $_POST['type'];
@@ -12,7 +13,7 @@ if (isset($_POST['submit'])) {
                         <strong>ERROR!</strong> Empty Fields
                         </div>';
     } else {
-        $sql = "SELECT * FROM users WHERE username = ?";
+        $sql = "SELECT * FROM users WHERE username = ? AND usertype = 'user'";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -26,7 +27,6 @@ if (isset($_POST['submit'])) {
             $result = mysqli_stmt_get_result($stmt);
 
             if ($row = mysqli_fetch_assoc($result)) {
-                $type = $row['usertype'];
                 $passCheck = password_verify($password, $row['password']);
 
                 //check if user or admin
@@ -54,7 +54,53 @@ if (isset($_POST['submit'])) {
                         /*  header("Location: ../index.php?error=wrongpass");
                         exit(); */
                     }
-                } else if ($account_type == 'admin') {
+                }
+            } else {
+                echo '<div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>ERROR!</strong> No User Found
+                        </div>';;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+if (isset($_POST['submit']) && $_POST['type'] == 'admin') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $account_type = $_POST['type'];
+
+    if (empty($username) || empty($password)) {
+
+        echo '<div class="alert alert-danger alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>ERROR!</strong> Empty Fields
+                        </div>';
+    } else {
+        $sql = "SELECT * FROM users WHERE username = ? AND usertype = 'admin'";
+        $stmt = mysqli_stmt_init($conn);
+
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo '<div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>ERROR!</strong> SQL ERROR
+                </div>';
+        } else {
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($row = mysqli_fetch_assoc($result)) {
+                $type = $row['usertype'];
+                $passCheck = password_verify($password, $row['password']);
+
+                if ($account_type == 'admin') {
                     /* echo "<script>alert('admin panel');
                         window.location.href='../index.php?error=admin';  
                         </script>"; */

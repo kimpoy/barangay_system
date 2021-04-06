@@ -28,7 +28,7 @@ if (isset($_POST['register'])) {
         header("Location: register.php");
         exit();
     } else {
-        $sql = "SELECT username FROM users WHERE username = ?";
+        $sql = "SELECT username FROM users WHERE username = ? AND usertype = 'user'";
         $stmt = mysqli_stmt_init($conn);
 
         //
