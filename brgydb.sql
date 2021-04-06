@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 06:20 PM
+-- Generation Time: Apr 06, 2021 at 05:46 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -25,40 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `appointments`
 --
 
 CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
   `textInputs` varchar(5000) NOT NULL,
-  `date` date NOT NULL,
-  `month` varchar(255) NOT NULL,
-  `year` varchar(255) NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`id`, `textInputs`, `date`, `month`, `year`) VALUES
-(18, 'sample1', '2021-03-03', '01', '2020'),
-(19, 'sample2', '2021-03-03', '01', '2020'),
-(20, 'sample3', '2021-04-01', '04', '2020'),
-(21, 'sample4', '2021-02-03', '04', '2020'),
-(22, 'sample5', '2021-01-06', '03', '2020'),
-(23, 'as', '0000-00-00', '03', '2021');
+INSERT INTO `appointments` (`id`, `textInputs`, `date`) VALUES
+(18, 'sample1', '2021-03-03'),
+(19, 'sample2', '2021-03-03'),
+(20, 'sample3', '2021-04-01'),
+(21, 'sample4', '2021-02-03'),
+(22, 'sample5', '2021-01-06'),
+(23, 'as', '2022-08-03'),
+(24, 'as', '2022-03-03'),
+(25, 'sample new appointmnets', '2021-04-06');
 
 -- --------------------------------------------------------
 
@@ -91,7 +79,8 @@ INSERT INTO `brgyclearance` (`id`, `fullname`, `age`, `abroad`, `loc`, `scholars
 (20, 'sample3', 'sample3', '', '', '', '', '', '', '0000-00-00', '01', '2021'),
 (21, 'sample4', 'sample4', '', '', '', '', '', '', '0000-00-00', '01', '2000'),
 (22, 'sample5', 'sample5', '', '', '', '', '', '', '0000-00-00', '02', '2000'),
-(23, 'as', 'as', 'abroad', 'local', 'scholarship', 'policeclearance', 'nbi', 'loanpurposes', '0000-00-00', '03', '2021');
+(23, 'as', 'as', 'abroad', 'local', 'scholarship', 'policeclearance', 'nbi', 'loanpurposes', '0000-00-00', '03', '2021'),
+(24, 'as', 'as', 'abroad', 'local', 'scholarship', 'policeclearance', 'nbi', 'loanpurposes', '2021-04-06', '', '');
 
 -- --------------------------------------------------------
 
@@ -120,7 +109,8 @@ INSERT INTO `business` (`id`, `bname`, `loc`, `operator`, `addr`, `date`, `month
 (13, 'sample3', 'sample3', 'sample3', 'sample3', '0000-00-00', '02', '2020'),
 (14, 'sample4', 'sample4', 'sample4', 'sample4', '0000-00-00', '05', '2020'),
 (15, 'sample5', 'sample5', 'sample5', 'sample5', '0000-00-00', '05', '2020'),
-(16, 'as', 'as', 'as', 'as', '0000-00-00', '03', '2021');
+(16, 'as', 'as', 'as', 'as', '0000-00-00', '03', '2021'),
+(17, 'as', 'as', 'as', 'as', '2021-04-06', '', '');
 
 -- --------------------------------------------------------
 
@@ -135,6 +125,11 @@ CREATE TABLE `census` (
   `firstname` varchar(255) NOT NULL,
   `middlename` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
+  `no` varchar(255) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `sub` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `province` varchar(255) NOT NULL,
   `dateofbirth` varchar(255) NOT NULL,
   `placeofbirth` varchar(255) NOT NULL,
   `sex` varchar(255) NOT NULL,
@@ -142,21 +137,21 @@ CREATE TABLE `census` (
   `occupation` varchar(255) NOT NULL,
   `citizenship` varchar(255) NOT NULL,
   `relationship` varchar(255) NOT NULL,
-  `date` date NOT NULL,
-  `month` varchar(255) NOT NULL,
-  `year` varchar(255) NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `census`
 --
 
-INSERT INTO `census` (`id`, `fullname`, `lastname`, `firstname`, `middlename`, `address`, `dateofbirth`, `placeofbirth`, `sex`, `civilstatus`, `occupation`, `citizenship`, `relationship`, `date`, `month`, `year`) VALUES
-(2, 'sample name1', 'sample', 'sample', 'sample', 'sample', 'sample', 'sample', 'sample', 'sample', 'sample', 'sample', '', '0000-00-00', '', ''),
-(3, 'sample name2', 'new', 'new', 'new', 'new', 'new', 'new', 'new', 'new', 'new', 'new', 'new', '0000-00-00', '', ''),
-(4, 'sample name3', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '0000-00-00', '', ''),
-(5, 'qw', '', '', '', 'qw', 'qw', 'qw', 'male', 'qw', 'qw', 'qw', 'qw', '0000-00-00', '', ''),
-(6, 'as', '', '', '', 'as', 'as', 'as', 'male', 'as', 'as', 'as', 'as', '0000-00-00', '', '');
+INSERT INTO `census` (`id`, `fullname`, `lastname`, `firstname`, `middlename`, `address`, `no`, `street`, `sub`, `city`, `province`, `dateofbirth`, `placeofbirth`, `sex`, `civilstatus`, `occupation`, `citizenship`, `relationship`, `date`) VALUES
+(3, 'sample name2', 'this', 'this', 'this', 'new', 'this', 'this', 'purok1', 'this', 'this', 'this', 'this', 'female', 'this', 'this', 'this', 'this', '0000-00-00'),
+(4, 'sample name3', 'asd', 'asd', 'asd', 'asd', '', '', '', '', '', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '0000-00-00'),
+(5, 'qw', '', '', '', 'qw', '', '', '', '', '', 'qw', 'qw', 'male', 'qw', 'qw', 'qw', 'qw', '0000-00-00'),
+(6, 'as', '', '', '', 'as', '', '', '', '', '', 'as', 'as', 'male', 'as', 'as', 'as', 'as', '0000-00-00'),
+(7, 'a', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'male', 'a', 'a', 'a', 'a', '0000-00-00'),
+(8, '', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'male', 'a', 'a', 'a', 'a', '0000-00-00'),
+(9, '', 'b', 'b', 'b', '', 'b', 'b', 'purok1', 'b', 'b', 'b', 'b', 'male', 'b', 'b', 'b', 'b', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -179,15 +174,7 @@ CREATE TABLE `medical` (
 --
 
 INSERT INTO `medical` (`id`, `fullname`, `work`, `purpose`, `date`, `month`, `year`) VALUES
-(85, 'sample1', 'sample1', 'sample1', '2021-03-01', '01', '2020'),
-(86, 'sample2', 'sample2', 'sample2', '2021-03-01', '01', '2020'),
-(87, 'sample3', 'sample3', 'sample3', '2021-03-02', '02', '2021'),
-(88, 'sample4', 'sample4', 'sample4', '2021-03-03', '02', '2021'),
-(89, 'sample5', 'sample5', 'sample5', '2021-03-04', '01', '2020'),
-(90, 'as', 'as', 'as', '0000-00-00', '01', '2020'),
-(92, 'qw', 'qw', 'qwa', '0000-00-00', '03', '2021'),
-(93, 'as', 'as', 'ass', '0000-00-00', '03', '2021'),
-(94, 'asd', 'qw', 'qwer', '0000-00-00', '03', '2021');
+(98, 'tes', 'tes', 'tes', '2021-04-06', '', '');
 
 -- --------------------------------------------------------
 
@@ -198,7 +185,7 @@ INSERT INTO `medical` (`id`, `fullname`, `work`, `purpose`, `date`, `month`, `ye
 CREATE TABLE `purokranking` (
   `id` int(11) NOT NULL,
   `fullname` varchar(255) NOT NULL,
-  `age` varchar(255) NOT NULL,
+  `age` int(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `sector` varchar(255) NOT NULL
@@ -209,21 +196,22 @@ CREATE TABLE `purokranking` (
 --
 
 INSERT INTO `purokranking` (`id`, `fullname`, `age`, `gender`, `address`, `sector`) VALUES
-(2, 'sample', '43', 'female', 'sample address2', 'labor'),
-(3, 'sample1', '45', 'male', 'sample address', 'ips'),
-(4, 'sample2', '23', 'male', 'sample address', 'ips'),
-(5, 'sample3', '12', 'female', 'sample address', 'labor'),
-(6, 'sample 4', '43', 'male', 'sample address', 'ofw'),
-(7, 'sample5', '0', 'male', 'as', 'unemployed'),
-(8, 'sample6', '1', 'female', 'as', 'unemployed'),
-(9, 'sample7', '5', 'female', 'sample address', 'osy'),
-(10, '', '4', 'female', '', 'osc'),
-(11, '', '3', 'male', '', 'osy'),
-(12, '', '0', 'male', 'as', 'osy'),
-(13, '', '1', 'female', 'as', 'pwd'),
-(14, '', '5', 'female', '', 'ofw'),
-(15, '', '4', 'female', '', 'osc'),
-(16, '', '3', 'male', '', 'osc');
+(3, 'new name', 11, 'female', 'purok1', 'unemployed'),
+(4, 'sample2', 23, 'male', 'purok4', 'ips'),
+(5, 'sample3', 12, 'female', 'purok1', 'labor'),
+(6, 'sample 4', 43, 'male', 'sample address', 'ofw'),
+(7, 'sample5', 0, 'male', 'as', 'unemployed'),
+(8, 'sample6', 1, 'female', 'as', 'unemployed'),
+(9, 'sample7', 5, 'female', 'sample address', 'osy'),
+(10, '', 4, 'female', '', 'osc'),
+(11, '', 3, 'male', '', 'osy'),
+(12, '', 0, 'male', 'as', 'osy'),
+(13, '', 1, 'female', 'as', 'pwd'),
+(14, '', 5, 'female', '', 'ofw'),
+(15, '', 4, 'female', '', 'osc'),
+(16, '', 3, 'male', '', 'osc'),
+(18, 'as', 0, 'male', 'purok1', 'ips'),
+(19, 'new sample', 12, 'male', 'purok1', 'labor');
 
 -- --------------------------------------------------------
 
@@ -249,7 +237,8 @@ INSERT INTO `residency` (`id`, `fullname`, `date`, `month`, `year`) VALUES
 (18, 'sample3', '0000-00-00', '05', '2021'),
 (19, 'sample4', '0000-00-00', '05', '2020'),
 (20, 'sample5', '0000-00-00', '05', '2022'),
-(21, 'as', '0000-00-00', '03', '2021');
+(21, 'as', '0000-00-00', '03', '2021'),
+(22, 'qw', '2021-04-06', '', '');
 
 -- --------------------------------------------------------
 
@@ -280,7 +269,8 @@ INSERT INTO `scholarship` (`id`, `fullname`, `mother`, `workMother`, `father`, `
 (26, 'sample2', 'sample2', 'sample2', 'sample2', 'sample2', '1', '0000-00-00', '08', '2021'),
 (27, 'sample3', 'sample3', 'sample3', 'sample3', 'sample3', '1', '0000-00-00', '07', '2023'),
 (28, 'sample4', 'sample4', 'sample4', 'sample4', 'sample4', '1', '0000-00-00', '07', '2023'),
-(29, 'qw', 'qw', 'qw', 'qw', 'qw', '12', '0000-00-00', '03', '2021');
+(29, 'qw', 'qw', 'qw', 'qw', 'qw', '12', '0000-00-00', '03', '2021'),
+(30, 'as', 'as', 'as', 'as', 'as', '12', '2021-04-06', '', '');
 
 -- --------------------------------------------------------
 
@@ -301,21 +291,13 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `usertype`) VALUES
 (34, 'admin', '$2y$10$spADwQfyetDaBIoTP3fnb.l/3MTdkgVWzznZBzqmnEAuyphFLWgf2', 'admin'),
-(71, 'ako', '$2y$10$htDIVVNqR0XMpR9rbpIjVOIUj2cG.0x7fupc98y..KomDu70GCc.S', 'admin'),
-(81, 'bisu', '$2y$10$dNztqnXVQqOlu9lROMb7k.b4gqNGl8OjXX3G3rNdOkveTHgAp65C6', 'admin'),
-(98, 'ghost', '$2y$10$StUC4hcWiARyp63DNTlk1eQ7Z2INNjG4zVo3Xv8DDVBfosmyQW2Oy', 'admin'),
 (102, 'user', '$2y$10$V6k6Mepmk0bGi6rK2TECrebOLQG9Uno/YdpjWOMp2wBgv8nxq.cA6', 'user'),
-(103, 'admin', '$2y$10$fwjrxfuuMeKFObuG0E8VBOuyT9CCFqo.5un1PDOlIWFhXpr/qYgY6', 'user');
+(109, 'user', '$2y$10$4y9XaaDtA.6tvFbKIMFEvOnbN0JFqU.lusVYULG6cbf8eehPRRpMK', 'admin'),
+(110, 'admin', '$2y$10$S4NHwTRh9ztq0CD6LyWZKOAkRwuKjvCryNwn0BJHRVvw/M1rk3qqG', 'user');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `appointments`
@@ -376,64 +358,58 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `brgyclearance`
 --
 ALTER TABLE `brgyclearance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `business`
 --
 ALTER TABLE `business`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `census`
 --
 ALTER TABLE `census`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `medical`
 --
 ALTER TABLE `medical`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `purokranking`
 --
 ALTER TABLE `purokranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `residency`
 --
 ALTER TABLE `residency`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `scholarship`
 --
 ALTER TABLE `scholarship`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
