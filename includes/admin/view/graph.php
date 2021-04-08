@@ -377,3 +377,38 @@
         }
     });
 </script>
+
+<!-- SCRIPT FOR Purok Ranking GRAPH -->
+<script>
+    let puroktext = <?php echo json_encode($purok_ranking_key) ?>;
+    let purokvalue = <?php echo json_encode($purok_ranking_value) ?>;
+    let purokcolor = ['#49A9EA', '#36CAAB', '#34495E', '#B370CF', '#eb4034', '#34eb56'];
+
+    let purokchart = document.getElementById("purokchart").getContext('2d');
+
+    let purokchart1 = new Chart(purokchart, {
+        type: 'bar',
+        data: {
+            labels: puroktext,
+            datasets: [{
+                data: purokvalue,
+                backgroundColor: purokcolor
+            }]
+        },
+        options: {
+            plugins: {
+                datalabels: {
+                    display: false
+                }
+            },
+            title: {
+                text: "Total Population",
+                display: true,
+                fontSize: 30
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+</script>

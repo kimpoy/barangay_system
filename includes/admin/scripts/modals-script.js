@@ -241,15 +241,21 @@ $(document).ready(function(){
         console.log(data);
 
         $('#update_id_census').val(data[0]);
-        $('#fullname_census').val(data[1]);
-        $('#address_census').val(data[2]);
-        $('#dateofbirth_census').val(data[3]);
-        $('#placeofbirth_census').val(data[4]);
-        $('#sex_census').val(data[5]);
-        $('#civilstatus_census').val(data[6]);
-        $('#occupation_census').val(data[7]);
-        $('#citizenship_census').val(data[8]);
-        $('#relationship_census').val(data[9]);
+        $('#firstname_census').val(data[1]);
+        $('#lastname_census').val(data[2]);
+        $('#middlename_census').val(data[3]);
+        $('#no_census').val(data[4]);
+        $('#street_census').val(data[5]);
+        $('#sub_census').val(data[6]);
+        $('#city_census').val(data[7]);
+        $('#province_census').val(data[8]);
+        $('#dateofbirth_census').val(data[9]);
+        $('#placeofbirth_census').val(data[10]);
+        $('#sex_census').val(data[11]);
+        $('#civilstatus_census').val(data[12]);
+        $('#occupation_census').val(data[13]);
+        $('#citizenship_census').val(data[14]);
+        $('#relationship_census').val(data[15]);
       
 
 

@@ -605,8 +605,18 @@
             <option value="female">Female</option>
           </select>
         </div>
-        <div class="form-group">
+        <!--  <div class="form-group">
           <input type="text" name="civilstatus" id="civilstatus" class="form-control" placeHolder="Civil status" required>
+        </div> -->
+        <div class="form-group">
+          <label for="civilstatus">Civil status</label>
+          <select name="civilstatus" id="civilstatus" required>
+            <option disabled selected></option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="widower">Widower</option>
+            <option value="separated">Separated</option>
+          </select>
         </div>
         <div class="form-group">
           <input type="text" name="occupation" id="occupation" class="form-control" placeHolder="Occupation" required>
@@ -651,7 +661,7 @@
         </div>
         <div class="form-group">
           <label for="sub">purok:</label>
-          <select name="sub" id="sub" required>
+          <select name="sub" id="sub_census" required>
             <option disabled selected></option>
             <option value="purok1">Purok 1</option>
             <option value="purok2">Purok 2</option>
@@ -678,8 +688,18 @@
             <option value="female">Female</option>
           </select>
         </div>
-        <div class="form-group">
+        <!--         <div class="form-group">
           <input type="text" name="civilstatus" id="civilstatus_census" class="form-control" placeHolder="Civil status" required>
+        </div> -->
+        <div class="form-group">
+          <label for="civilstatus">Civil status</label>
+          <select name="civilstatus" id="civilstatus_census" required>
+            <option disabled selected></option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="widower">Widower</option>
+            <option value="separated">Separated</option>
+          </select>
         </div>
         <div class="form-group">
           <input type="text" name="occupation" id="occupation_census" class="form-control" placeHolder="Occupation" required>

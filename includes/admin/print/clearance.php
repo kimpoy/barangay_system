@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <title>Print</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div class="print-wrapper">
-<button class="button print-button" id="doPrint">Print</button>
-</div>
+    <div class="print-wrapper">
+        <button class="button print-button" id="doPrint">Print</button>
+    </div>
     <div class="container" id="printDiv">
         <!-- top -->
         <div class="top-page">
@@ -30,7 +32,7 @@
             <!-- left side -->
             <div class="left-content">
                 <div class="title">
-                    <h3>BARANGAY OFFICIALS</h3> 
+                    <h3>BARANGAY OFFICIALS</h3>
                 </div>
                 <h4>Hon. WILFREDO F. MUSNGI</h4>
                 <p>Punong Barangay</p>
@@ -77,131 +79,132 @@
                     <h1>BARANGAY CLEARANCE</h1>
                 </div>
                 <p>To Whom It May Concern:</p>
-                <p class="indention">This is to certify that <input class="field-form" type="text" value="<?php echo $_GET['fullname']; ?>" readonly> 
-                single/married/widow/widower,  <input class="field-form" type="text" value="<?php echo $_GET['age']; ?>" readonly> 
-                years old, Filipino citizen, is a bonafide resident of this barangay and is known to me to be a law-abiding citizen and has a good moral character. That of my own personal knowledge, she/he has not committed, nor been involved in any kind of unlawful activities in this barangay. </p>
-    
-                <p class="indention">Issued this  <input class="field-form" type="text" value="<?php echo date("jS"); ?>" readonly> 
-                day of <input class="field-form" type="text" value="<?php echo date("F"); ?>" readonly>, 2021  at Barangay San Roque, Sta. Ana, Pampanga </p>
-                
+                <p class="indention">This is to certify that <input class="field-form" type="text" value="<?php echo $_GET['fullname']; ?>" readonly>
+                    single/married/widow/widower, <input class="field-form" type="text" value="<?php echo $_GET['age']; ?>" readonly>
+                    years old, Filipino citizen, is a bonafide resident of this barangay and is known to me to be a law-abiding citizen and has a good moral character. That of my own personal knowledge, she/he has not committed, nor been involved in any kind of unlawful activities in this barangay. </p>
+
+                <p class="indention">Issued this <input class="field-form" type="text" value="<?php echo date("jS"); ?>" readonly>
+                    day of <input class="field-form" type="text" value="<?php echo date("F"); ?>" readonly>, 2021 at Barangay San Roque, Sta. Ana, Pampanga </p>
+
                 <div class="clearance-input">
                     <div class="clearance-column">
-                        
+
                         <div>
-                        <?php
+                            <?php
                             $abroad = $_GET['abroad'];
-                            if($abroad == 'abroad'):
-                        ?>
-                            <input type="checkbox" id="abroad" name="abroad" value="abroad" checked>
-                            <label for="abroad">Abroad</label>
-                        <?php
-                            elseif($abroad == ''):
-                        ?>
-                            <input type="checkbox" id="abroad" name="abroad" value="abroad">
-                            <label for="abroad">Abroad</label>
-                        <?php endif ?>
+                            if ($abroad == 'abroad') :
+                            ?>
+                                <input type="checkbox" id="abroad" name="abroad" value="abroad" checked>
+                                <label for="abroad">Abroad</label>
+                            <?php
+                            elseif ($abroad == '') :
+                            ?>
+                                <input type="checkbox" id="abroad" name="abroad" value="abroad">
+                                <label for="abroad">Abroad</label>
+                            <?php endif ?>
                         </div>
-    
+
                         <div>
-                        <?php
+                            <?php
                             $loc = $_GET['loc'];
-                            if($loc == 'local'):
-                        ?>
-                            <input type="checkbox" id="local" name="local" value="local" checked>
-                            <label for="local">Local</label>
-                        <?php
-                            elseif($loc == ''):
-                        ?>
-                            <input type="checkbox" id="local" name="local" value="local">
-                            <label for="local">Local</label>
-                        <?php endif ?>
+                            if ($loc == 'local') :
+                            ?>
+                                <input type="checkbox" id="local" name="local" value="local" checked>
+                                <label for="local">Local</label>
+                            <?php
+                            elseif ($loc == '') :
+                            ?>
+                                <input type="checkbox" id="local" name="local" value="local">
+                                <label for="local">Local</label>
+                            <?php endif ?>
                         </div>
                         <div>
-                        <?php
+                            <?php
                             $scholarship = $_GET['scholarship'];
-                            if($scholarship == 'scholarship'):
-                        ?>
-                            <input type="checkbox" id="scholarship" name="scholarship" value="scholarship" checked>
-                            <label for="scholarship">Scholarship</label>
-                        <?php
-                            elseif($loc == ''):
-                        ?>
-                            <input type="checkbox" id="scholarship" name="scholarship" value="scholarship">
-                            <label for="scholarship">Scholarship</label>
-                        <?php endif ?>
+                            if ($scholarship == 'scholarship') :
+                            ?>
+                                <input type="checkbox" id="scholarship" name="scholarship" value="scholarship" checked>
+                                <label for="scholarship">Scholarship</label>
+                            <?php
+                            elseif ($loc == '') :
+                            ?>
+                                <input type="checkbox" id="scholarship" name="scholarship" value="scholarship">
+                                <label for="scholarship">Scholarship</label>
+                            <?php endif ?>
                         </div>
-                        
-                        
+
+
                     </div>
-                    
+
                     <div class="clearance-column">
                         <div>
-                        <?php
+                            <?php
                             $policeClearance = $_GET['policeClearance'];
-                            if($policeClearance == 'policeClearance'):
-                        ?>
-                            <input type="checkbox" id="police" name="police" value="police" checked>
-                            <label for="police">Police Clearance</label>
-                        <?php
-                            elseif($policeClearance == ''):
-                        ?>
-                            <input type="checkbox" id="police" name="police" value="police">
-                            <label for="police">Police Clearance</label>
-                        <?php endif ?>
+                            if ($policeClearance == 'policeClearance') :
+                            ?>
+                                <input type="checkbox" id="police" name="police" value="police" checked>
+                                <label for="police">Police Clearance</label>
+                            <?php
+                            elseif ($policeClearance == '') :
+                            ?>
+                                <input type="checkbox" id="police" name="police" value="police">
+                                <label for="police">Police Clearance</label>
+                            <?php endif ?>
                         </div>
                         <div>
-                        <?php
+                            <?php
                             $nbi = $_GET['nbi'];
-                            if($nbi == 'nbi'):
-                        ?>
-                            <input type="checkbox" id="nbi" name="nbi" value="nbi" checked>
-                            <label for="nbi">NBI</label>
-                        <?php
-                            elseif($nbi == ''):
-                        ?>
-                            <input type="checkbox" id="nbi" name="nbi" value="nbi">
-                            <label for="nbi">NBI</label>
-                        <?php endif ?>
+                            if ($nbi == 'nbi') :
+                            ?>
+                                <input type="checkbox" id="nbi" name="nbi" value="nbi" checked>
+                                <label for="nbi">NBI</label>
+                            <?php
+                            elseif ($nbi == '') :
+                            ?>
+                                <input type="checkbox" id="nbi" name="nbi" value="nbi">
+                                <label for="nbi">NBI</label>
+                            <?php endif ?>
                         </div>
                         <div>
-                        <?php
+                            <?php
                             $loanPurposes = $_GET['loanPurposes'];
-                            if($loanPurposes == 'loanPurposes'):
-                        ?>
-                            <input type="checkbox" id="loan" name="loan" value="loan" checked>
-                            <label for="loan">Loan Purposes</label>
-                        <?php
-                            elseif($loanPurposes == ''):
-                        ?>
-                            <input type="checkbox" id="loan" name="loan" value="loan">
-                            <label for="loan">Loan Purposes</label>
-                        <?php endif ?>
+                            if ($loanPurposes == 'loanPurposes') :
+                            ?>
+                                <input type="checkbox" id="loan" name="loan" value="loan" checked>
+                                <label for="loan">Loan Purposes</label>
+                            <?php
+                            elseif ($loanPurposes == '') :
+                            ?>
+                                <input type="checkbox" id="loan" name="loan" value="loan">
+                                <label for="loan">Loan Purposes</label>
+                            <?php endif ?>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="right-content-sign">
                     <h3>Hon. WILFREDO F. MUSNGI</h3>
                     <p>Punong Barangay</p>
                 </div>
-    
+
                 <p class="p">Prepared by:</p>
                 <h3>Ms. FLORDELYN V. GREGORIO</h3>
                 <p class="bottom-p">Barangay Secretary </p>
-    
-                
+
+
             </div>
         </div>
     </div>
     <script>
         document.getElementById("doPrint").addEventListener("click", function() {
-     var printContents = document.getElementById('printDiv').innerHTML;
-     var originalContents = document.body.innerHTML;
-     document.body.innerHTML = printContents;
-     window.print();
-     document.body.innerHTML = originalContents;
-     location.reload();
-});
+            var printContents = document.getElementById('printDiv').innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+            location.reload();
+        });
     </script>
 </body>
+
 </html>

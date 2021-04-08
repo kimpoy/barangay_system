@@ -82,7 +82,7 @@ input {
 .right-content .indention {
   text-indent: 50px;
 }
-.right-content .field-form {
+.field-form {
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -178,3 +178,37 @@ ul {
   }
 }
  */
+
+/* *Census */
+
+.to-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+.to-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+.box {
+  width: 70%;
+  margin: auto;
+}
+.box-content {
+  margin-right: 1em;
+}
+
+.center-sign {
+  display: flex;
+  flex-direction: column;
+}
+.box-shape {
+  width: 5em;
+  height: 5em;
+  border: 1px solid #000;
+}
+.between-space {
+  display: flex;
+  justify-content: space-between;
+}

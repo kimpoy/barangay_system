@@ -65,8 +65,8 @@ FROM appointments
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$appointments_week = array();
-while($row = $week1->fetch_assoc()){
+$appointments_week = array(0);
+while ($row = $week1->fetch_assoc()) {
     array_push($appointments_week, $row['cnt1']);
 }
 $appointments_week_max = max($appointments_week);
@@ -78,8 +78,8 @@ FROM medical
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$medical_week = array();
-while($row = $week2->fetch_assoc()){
+$medical_week = array(0);
+while ($row = $week2->fetch_assoc()) {
     array_push($medical_week, $row['cnt2']);
 }
 $medical_week_max = max($medical_week);
@@ -91,8 +91,8 @@ FROM scholarship
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$scholarship_week = array();
-while($row = $week3->fetch_assoc()){
+$scholarship_week = array(0);
+while ($row = $week3->fetch_assoc()) {
     array_push($scholarship_week, $row['cnt3']);
 }
 $scholarship_week_max = max($scholarship_week);
@@ -104,8 +104,8 @@ FROM brgyclearance
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$brgyclearance_week = array();
-while($row = $week4->fetch_assoc()){
+$brgyclearance_week = array(0);
+while ($row = $week4->fetch_assoc()) {
     array_push($brgyclearance_week, $row['cnt4']);
 }
 $brgyclearance_week_max = max($brgyclearance_week);
@@ -117,8 +117,8 @@ FROM business
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$business_week = array();
-while($row = $week5->fetch_assoc()){
+$business_week = array(0);
+while ($row = $week5->fetch_assoc()) {
     array_push($business_week, $row['cnt5']);
 }
 $business_week_max = max($business_week);
@@ -130,8 +130,8 @@ FROM residency
 GROUP BY week_name
 ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
 
-$residency_week = array();
-while($row = $week6->fetch_assoc()){
+$residency_week = array(0);
+while ($row = $week6->fetch_assoc()) {
     array_push($residency_week, $row['cnt6']);
 }
 $residency_week_max = max($residency_week);
@@ -169,7 +169,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date1
 FROM appointments
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$appointments_result = array();
+$appointments_result = array(0);
 while ($row = $appointments->fetch_assoc()) {
     array_push($appointments_result, $row['date1']);
 }
@@ -181,7 +181,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date2
 FROM medical
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$medical_result = array();
+$medical_result = array(0);
 while ($row = $medical->fetch_assoc()) {
     array_push($medical_result, $row['date2']);
 }
@@ -193,7 +193,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date3
 FROM scholarship
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$scholarship_result = array();
+$scholarship_result = array(0);
 while ($row = $scholarship->fetch_assoc()) {
     array_push($scholarship_result, $row['date3']);
 }
@@ -205,7 +205,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date4
 FROM brgyclearance
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$brgyclearance_result = array();
+$brgyclearance_result = array(0);
 while ($row = $brgyclearance->fetch_assoc()) {
     array_push($brgyclearance_result, $row['date4']);
 }
@@ -217,7 +217,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date5
 FROM business
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$business_result = array();
+$business_result = array(0);
 while ($row = $business->fetch_assoc()) {
     array_push($business_result, $row['date5']);
 }
@@ -229,7 +229,7 @@ YEAR(date), MONTH(date), COUNT(*) AS date6
 FROM residency
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
-$residency_result = array();
+$residency_result = array(0);
 while ($row = $residency->fetch_assoc()) {
     array_push($residency_result, $row['date6']);
 }
@@ -264,7 +264,7 @@ YEAR(date) AS year_name, COUNT(*) AS year1
 FROM appointments
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$appointments_result = array();
+$appointments_result = array(0);
 while ($row = $appointments->fetch_assoc()) {
     array_push($appointments_result, $row['year1']);
 }
@@ -276,7 +276,7 @@ YEAR(date) AS year_name, COUNT(*) AS year2
 FROM medical
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$medical_result = array();
+$medical_result = array(0);
 while ($row = $medical->fetch_assoc()) {
     array_push($medical_result, $row['year2']);
 }
@@ -288,7 +288,7 @@ YEAR(date) AS year_name, COUNT(*) AS year3
 FROM scholarship
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$scholarship_result = array();
+$scholarship_result = array(0);
 while ($row = $scholarship->fetch_assoc()) {
     array_push($scholarship_result, $row['year3']);
 }
@@ -300,7 +300,7 @@ YEAR(date) AS year_name, COUNT(*) AS year4
 FROM brgyclearance
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$brgyclearance_result = array();
+$brgyclearance_result = array(0);
 while ($row = $brgyclearance->fetch_assoc()) {
     array_push($brgyclearance_result, $row['year4']);
 }
@@ -312,7 +312,7 @@ YEAR(date) AS year_name, COUNT(*) AS year5
 FROM business
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$business_result = array();
+$business_result = array(0);
 while ($row = $business->fetch_assoc()) {
     array_push($business_result, $row['year5']);
 }
@@ -324,7 +324,7 @@ YEAR(date) AS year_name, COUNT(*) AS year6
 FROM residency
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
-$residency_result = array();
+$residency_result = array(0);
 while ($row = $residency->fetch_assoc()) {
     array_push($residency_result, $row['year6']);
 }
@@ -430,40 +430,194 @@ foreach ($yearly_most_requested as $yearly_most_key => $yearly_most_value) {
 
 /* Census */
 //for weekly
-$week_census = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
+/* purok1 */
+$week_census_purok1 = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
 YEAR(date), WEEK(date), COUNT(*) AS cntcensus
 FROM census
+WHERE sub='purok1'
 GROUP BY week_name
-ORDER BY YEAR(DATE) ASC, WEEK(date) ASC") or die($conn->error);
+ORDER BY YEAR(DATE) ASC, WEEK(date) ASC ") or die($conn->error);
 
-$census_week = array();
-while($row = $week_census->fetch_assoc()){
-    array_push($census_week, $row['cntcensus']);
+$census_week_purok1 = array(0);
+while ($row = $week_census_purok1->fetch_assoc()) {
+    array_push($census_week_purok1, $row['cntcensus']);
 }
-$census_week_max = max($census_week);
+/* purok2 */
+$week_census_purok2 = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
+YEAR(date), WEEK(date), COUNT(*) AS cntcensus
+FROM census
+WHERE sub='purok2'
+GROUP BY week_name
+ORDER BY YEAR(DATE) ASC, WEEK(date) ASC ") or die($conn->error);
+
+$census_week_purok2 = array(0);
+while ($row = $week_census_purok2->fetch_assoc()) {
+    array_push($census_week_purok2, $row['cntcensus']);
+}
+/* purok3 */
+$week_census_purok3 = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
+YEAR(date), WEEK(date), COUNT(*) AS cntcensus
+FROM census
+WHERE sub='purok3'
+GROUP BY week_name
+ORDER BY YEAR(DATE) ASC, WEEK(date) ASC ") or die($conn->error);
+
+$census_week_purok3 = array(0);
+while ($row = $week_census_purok3->fetch_assoc()) {
+    array_push($census_week_purok3, $row['cntcensus']);
+}
+/* purok4 */
+$week_census_purok4 = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
+YEAR(date), WEEK(date), COUNT(*) AS cntcensus
+FROM census
+WHERE sub='purok4'
+GROUP BY week_name
+ORDER BY YEAR(DATE) ASC, WEEK(date) ASC ") or die($conn->error);
+
+$census_week_purok4 = array(0);
+while ($row = $week_census_purok4->fetch_assoc()) {
+    array_push($census_week_purok4, $row['cntcensus']);
+}
+/* purok5 */
+$week_census_purok5 = $conn->query("SELECT CONCAT(YEAR(date), '/', WEEK(date)) AS week_name, 
+YEAR(date), WEEK(date), COUNT(*) AS cntcensus
+FROM census
+WHERE sub='purok5'
+GROUP BY week_name
+ORDER BY YEAR(DATE) ASC, WEEK(date) ASC ") or die($conn->error);
+
+$census_week_purok5 = array(0);
+while ($row = $week_census_purok5->fetch_assoc()) {
+    array_push($census_week_purok5, $row['cntcensus']);
+}
+
+
+
 
 //for monthly
-$month_census = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
+//purok1
+$month_census_purok1 = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
 YEAR(date), MONTH(date), COUNT(*) AS cntmcensus
 FROM census
+WHERE sub='purok1'
 GROUP BY month_name
 ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
 
-$census_month = array();
-while($row = $month_census->fetch_assoc()){
-    array_push($census_month, $row['cntmcensus']);
+$census_month_purok1 = array(0);
+while ($row = $month_census_purok1->fetch_assoc()) {
+    array_push($census_month_purok1, $row['cntmcensus']);
 }
-$census_month_max = max($census_month);
+//purok2
+$month_census_purok2 = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
+YEAR(date), MONTH(date), COUNT(*) AS cntmcensus
+FROM census
+WHERE sub='purok2'
+GROUP BY month_name
+ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
+
+$census_month_purok2 = array(0);
+while ($row = $month_census_purok2->fetch_assoc()) {
+    array_push($census_month_purok2, $row['cntmcensus']);
+}
+//purok3
+$month_census_purok3 = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
+YEAR(date), MONTH(date), COUNT(*) AS cntmcensus
+FROM census
+WHERE sub='purok3'
+GROUP BY month_name
+ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
+
+$census_month_purok3 = array(0);
+while ($row = $month_census_purok3->fetch_assoc()) {
+    array_push($census_month_purok3, $row['cntmcensus']);
+}
+//purok4
+$month_census_purok4 = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
+YEAR(date), MONTH(date), COUNT(*) AS cntmcensus
+FROM census
+WHERE sub='purok4'
+GROUP BY month_name
+ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
+
+$census_month_purok4 = array(0);
+while ($row = $month_census_purok4->fetch_assoc()) {
+    array_push($census_month_purok4, $row['cntmcensus']);
+}
+//purok5
+$month_census_purok5 = $conn->query("SELECT CONCAT(YEAR(date), '/', MONTH(date)) AS month_name, 
+YEAR(date), MONTH(date), COUNT(*) AS cntmcensus
+FROM census
+WHERE sub='purok5'
+GROUP BY month_name
+ORDER BY YEAR(DATE) ASC, MONTH(date) ASC") or die($conn->error);
+
+$census_month_purok5 = array(0);
+while ($row = $month_census_purok5->fetch_assoc()) {
+    array_push($census_month_purok5, $row['cntmcensus']);
+}
+
+
+
+
 
 //for yearly
-$year_census = $conn->query("SELECT
+//purok1
+$year_census_purok1 = $conn->query("SELECT
 YEAR(date) AS year_name, COUNT(*) AS cntycensus
 FROM census
+WHERE sub='purok1'
 GROUP BY year_name
 ORDER BY YEAR(DATE) ASC") or die($conn->error);
 
-$census_year = array();
-while($row = $year_census->fetch_assoc()){
-    array_push($census_year, $row['cntycensus']);
+$census_year_purok1 = array(0);
+while ($row = $year_census_purok1->fetch_assoc()) {
+    array_push($census_year_purok1, $row['cntycensus']);
 }
-$census_year_max = max($census_year);
+//purok2
+$year_census_purok2 = $conn->query("SELECT
+YEAR(date) AS year_name, COUNT(*) AS cntycensus
+FROM census
+WHERE sub='purok2'
+GROUP BY year_name
+ORDER BY YEAR(DATE) ASC") or die($conn->error);
+
+$census_year_purok2 = array(0);
+while ($row = $year_census_purok2->fetch_assoc()) {
+    array_push($census_year_purok2, $row['cntycensus']);
+}
+//purok3
+$year_census_purok3 = $conn->query("SELECT
+YEAR(date) AS year_name, COUNT(*) AS cntycensus
+FROM census
+WHERE sub='purok3'
+GROUP BY year_name
+ORDER BY YEAR(DATE) ASC") or die($conn->error);
+
+$census_year_purok3 = array(0);
+while ($row = $year_census_purok3->fetch_assoc()) {
+    array_push($census_year_purok3, $row['cntycensus']);
+}
+//purok4
+$year_census_purok4 = $conn->query("SELECT
+YEAR(date) AS year_name, COUNT(*) AS cntycensus
+FROM census
+WHERE sub='purok4'
+GROUP BY year_name
+ORDER BY YEAR(DATE) ASC") or die($conn->error);
+
+$census_year_purok4 = array(0);
+while ($row = $year_census_purok4->fetch_assoc()) {
+    array_push($census_year_purok4, $row['cntycensus']);
+}
+//purok5
+$year_census_purok5 = $conn->query("SELECT
+YEAR(date) AS year_name, COUNT(*) AS cntycensus
+FROM census
+WHERE sub='purok5'
+GROUP BY year_name
+ORDER BY YEAR(DATE) ASC") or die($conn->error);
+
+$census_year_purok5 = array(0);
+while ($row = $year_census_purok5->fetch_assoc()) {
+    array_push($census_year_purok5, $row['cntycensus']);
+}

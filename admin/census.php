@@ -115,7 +115,8 @@ if (isset($_SESSION['added_error'])) {
                                 <td><?php echo $row['relationship']; ?></td>
                                 <td>
                                     <button type="button" class="btn btn-info updatebtnCensus" style="width:4.5rem;">Edit</button>
-                                    <a href="census.php?deleteCensus=<?php echo $row['id']; ?>" class="btn btn-danger mt-1" style="width:4.5rem;">Delete</a>
+                                    <a href="census.php?deleteCensus=<?php echo $row['id']; ?>" class="btn btn-danger mt-1 mb-1" style="width:4.5rem;">Delete</a>
+                                    <a href="../includes/admin/print/census.php?city=<?php echo $row['city']; ?>&sub=<?php echo $row['sub']; ?>&lastname=<?php echo $row['lastname']; ?>&middlename=<?php echo $row['middlename']; ?>&firstname=<?php echo $row['firstname']; ?>&no=<?php echo $row['no']; ?>&street=<?php echo $row['street']; ?>&province=<?php echo $row['province']; ?>&dateofbirth=<?php echo $row['dateofbirth']; ?>&placeofbirth=<?php echo $row['placeofbirth']; ?>&sex=<?php echo $row['sex']; ?>&civilstatus=<?php echo $row['civilstatus']; ?>&occupation=<?php echo $row['occupation']; ?>&citizenship=<?php echo $row['citizenship']; ?>&relationship=<?php echo $row['relationship']; ?>" target="_blank" class="btn btn-secondary" style="width:4.5rem;">Print</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -137,11 +138,32 @@ if (isset($_SESSION['added_error'])) {
                 </tr>
             </thread>
 
+            <?php
+
+            ?>
+
             <tbody id="adminTable">
                 <tr>
-                    <td style="width:10%">Census</td>
-                    <td style="width:10%"><?php echo $census_week_max; ?></td>
+                    <td style="width:10%">Purok 1</td>
+                    <td style="width:10%"><?php echo max($census_week_purok1); ?></td>
                 </tr>
+                <tr>
+                    <td style="width:10%">Purok 2</td>
+                    <td style="width:10%"><?php echo max($census_week_purok2); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 3</td>
+                    <td style="width:10%"><?php echo max($census_week_purok3); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 4</td>
+                    <td style="width:10%"><?php echo max($census_week_purok4); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 5</td>
+                    <td style="width:10%"><?php echo max($census_week_purok5); ?></td>
+                </tr>
+
             </tbody>
         </table>
         <!-- END TABLE -->
@@ -160,8 +182,24 @@ if (isset($_SESSION['added_error'])) {
 
             <tbody id="adminTable">
                 <tr>
-                    <td style="width:10%">Census</td>
-                    <td style="width:10%"><?php echo $census_month_max; ?></td>
+                    <td style="width:10%">Purok 1</td>
+                    <td style="width:10%"><?php echo max($census_month_purok1); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 2</td>
+                    <td style="width:10%"><?php echo max($census_month_purok2); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 3</td>
+                    <td style="width:10%"><?php echo max($census_month_purok3); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 4</td>
+                    <td style="width:10%"><?php echo max($census_month_purok4); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 5</td>
+                    <td style="width:10%"><?php echo max($census_month_purok5); ?></td>
                 </tr>
             </tbody>
         </table>
@@ -181,8 +219,24 @@ if (isset($_SESSION['added_error'])) {
 
             <tbody id="adminTable">
                 <tr>
-                    <td style="width:10%">Census</td>
-                    <td style="width:10%"><?php echo $census_year_max; ?></td>
+                    <td style="width:10%">Purok 1</td>
+                    <td style="width:10%"><?php echo max($census_year_purok1); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 2</td>
+                    <td style="width:10%"><?php echo max($census_year_purok2); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 3</td>
+                    <td style="width:10%"><?php echo max($census_year_purok3); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 4</td>
+                    <td style="width:10%"><?php echo max($census_year_purok4); ?></td>
+                </tr>
+                <tr>
+                    <td style="width:10%">Purok 5</td>
+                    <td style="width:10%"><?php echo max($census_year_purok5); ?></td>
                 </tr>
             </tbody>
         </table>

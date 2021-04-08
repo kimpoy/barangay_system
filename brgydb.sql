@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2021 at 05:46 PM
+-- Generation Time: Apr 08, 2021 at 06:13 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -133,6 +133,8 @@ CREATE TABLE `census` (
   `dateofbirth` varchar(255) NOT NULL,
   `placeofbirth` varchar(255) NOT NULL,
   `sex` varchar(255) NOT NULL,
+  `male` varchar(255) NOT NULL,
+  `female` varchar(255) NOT NULL,
   `civilstatus` varchar(255) NOT NULL,
   `occupation` varchar(255) NOT NULL,
   `citizenship` varchar(255) NOT NULL,
@@ -144,14 +146,11 @@ CREATE TABLE `census` (
 -- Dumping data for table `census`
 --
 
-INSERT INTO `census` (`id`, `fullname`, `lastname`, `firstname`, `middlename`, `address`, `no`, `street`, `sub`, `city`, `province`, `dateofbirth`, `placeofbirth`, `sex`, `civilstatus`, `occupation`, `citizenship`, `relationship`, `date`) VALUES
-(3, 'sample name2', 'this', 'this', 'this', 'new', 'this', 'this', 'purok1', 'this', 'this', 'this', 'this', 'female', 'this', 'this', 'this', 'this', '0000-00-00'),
-(4, 'sample name3', 'asd', 'asd', 'asd', 'asd', '', '', '', '', '', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '0000-00-00'),
-(5, 'qw', '', '', '', 'qw', '', '', '', '', '', 'qw', 'qw', 'male', 'qw', 'qw', 'qw', 'qw', '0000-00-00'),
-(6, 'as', '', '', '', 'as', '', '', '', '', '', 'as', 'as', 'male', 'as', 'as', 'as', 'as', '0000-00-00'),
-(7, 'a', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'male', 'a', 'a', 'a', 'a', '0000-00-00'),
-(8, '', 'a', 'a', 'a', '', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'male', 'a', 'a', 'a', 'a', '0000-00-00'),
-(9, '', 'b', 'b', 'b', '', 'b', 'b', 'purok1', 'b', 'b', 'b', 'b', 'male', 'b', 'b', 'b', 'b', '0000-00-00');
+INSERT INTO `census` (`id`, `fullname`, `lastname`, `firstname`, `middlename`, `address`, `no`, `street`, `sub`, `city`, `province`, `dateofbirth`, `placeofbirth`, `sex`, `male`, `female`, `civilstatus`, `occupation`, `citizenship`, `relationship`, `date`) VALUES
+(14, '', 'last name', 'first name', 'middle nam', '', '12', 'street', 'purok1', 'city', 'province', '10-10-10', 'place of birth', 'male', '', '', 'separated', 'occupation', 'citizenship', 'relationship to household head', '0000-00-00'),
+(15, '', 'p', 'p', 'p', '', 'p', 'p', 'purok2', 'p', 'p', 'p', 'p', 'male', '', '', 'widower', 'p', 'p', 'p', '0000-00-00'),
+(16, '', 'j', 'j', 'j', '', 'j', 'j', 'purok1', 'j', 'j', 'j', 'j', 'male', '', '', 'single', 'j', 'j', 'j', '0000-00-00'),
+(17, '', '9', '9', '9', '', '9', '9', 'purok3', '9', '9', '9', '9', 'male', '', '', 'single', '9', '9', '9', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -174,7 +173,7 @@ CREATE TABLE `medical` (
 --
 
 INSERT INTO `medical` (`id`, `fullname`, `work`, `purpose`, `date`, `month`, `year`) VALUES
-(98, 'tes', 'tes', 'tes', '2021-04-06', '', '');
+(99, 'sample', 'samle', 'sample', '2021-04-08', '', '');
 
 -- --------------------------------------------------------
 
@@ -264,7 +263,6 @@ CREATE TABLE `scholarship` (
 --
 
 INSERT INTO `scholarship` (`id`, `fullname`, `mother`, `workMother`, `father`, `workFather`, `earnings`, `date`, `month`, `year`) VALUES
-(24, 'sample', 'sample', 'sample', 'sample', 'sample', '1', '0000-00-00', '08', '2020'),
 (25, 'sample1', 'sample1', 'sample1', 'sample1', 'sample1', '1', '0000-00-00', '08', '2020'),
 (26, 'sample2', 'sample2', 'sample2', 'sample2', 'sample2', '1', '0000-00-00', '08', '2021'),
 (27, 'sample3', 'sample3', 'sample3', 'sample3', 'sample3', '1', '0000-00-00', '07', '2023'),
@@ -379,13 +377,13 @@ ALTER TABLE `business`
 -- AUTO_INCREMENT for table `census`
 --
 ALTER TABLE `census`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `medical`
 --
 ALTER TABLE `medical`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `purokranking`
