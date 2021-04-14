@@ -2,9 +2,9 @@
 
 
 if (isset($_POST['submit']) && $_POST['type'] == 'user') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $account_type = $_POST['type'];
+    $username =  mysqli_real_escape_string($conn, $_POST['username']);;
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $account_type = mysqli_real_escape_string($conn, $_POST['type']);
 
     if (empty($username) || empty($password)) {
 
@@ -72,9 +72,9 @@ if (isset($_POST['submit']) && $_POST['type'] == 'user') {
 
 
 if (isset($_POST['submit']) && $_POST['type'] == 'admin') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $account_type = $_POST['type'];
+    $username =  mysqli_real_escape_string($conn, $_POST['username']);;
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $account_type = mysqli_real_escape_string($conn, $_POST['type']);
 
     if (empty($username) || empty($password)) {
 

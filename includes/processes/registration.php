@@ -6,9 +6,9 @@ require_once 'message.php';
 /* REGISTRATION MAIN PAGE ----------------------------------------------------*/
 if (isset($_POST['register'])) {
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $confirmPassword = mysqli_real_escape_string($conn, $_POST['confirmPassword']);
     $type = 'user';
 
     //Error Handlers
@@ -74,9 +74,9 @@ if (isset($_POST['register'])) {
 if (isset($_POST['create'])) {
 
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $confirmPassword = mysqli_real_escape_string($conn, $_POST['confirmPassword']);
 
     $type = 'admin';
 
@@ -143,9 +143,9 @@ if (isset($_POST['create'])) {
 if (isset($_POST['reg'])) {
 
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $confirmPassword = mysqli_real_escape_string($conn, $_POST['confirmPassword']);
         /* $type = $_POST['type'] */;
     $type = 'user';
 

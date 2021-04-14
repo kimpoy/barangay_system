@@ -518,7 +518,7 @@
         </div>
         <div class="form-group">
           <label for="address">purok:</label>
-          <select name="address" id="address" required>
+          <select name="address" id="address_purok" required>
             <option disabled selected></option>
             <option value="purok1">Purok 1</option>
             <option value="purok2">Purok 2</option>
@@ -529,7 +529,7 @@
         </div>
         <div class="form-group">
           <label for="sector">sector:</label>
-          <select name="sector" id="sector" required>
+          <select name="sector" id="sector_purok" required>
             <option disabled selected></option>
             <option value="labor">LABOR FORCE</option>
             <option value="unemployed">UNEMPLOYED</option>

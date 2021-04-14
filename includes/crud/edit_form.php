@@ -20,10 +20,10 @@ function message_update_success()
 
 /* update account admin */
 if (isset($_POST['update'])) {
-  $user = $_POST['username'];
-  $pass = $_POST['password'];
-  $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
-  $id = $_POST['update_id'];
+  $user = mysqli_real_escape_string($conn, $_POST['username']);
+  $pass = mysqli_real_escape_string($conn, $_POST['password']);
+  $hashedPass = mysqli_real_escape_string($conn, password_hash($pass, PASSWORD_DEFAULT));
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE users SET username='$user', password='$hashedPass' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -35,10 +35,10 @@ if (isset($_POST['update'])) {
 
 /* update account user */
 if (isset($_POST['update-user'])) {
-  $user = $_POST['username'];
-  $pass = $_POST['password'];
-  $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
-  $id = $_POST['update_id'];
+  $user = mysqli_real_escape_string($conn, $_POST['username']);
+  $pass = mysqli_real_escape_string($conn, $_POST['password']);
+  $hashedPass = mysqli_real_escape_string($conn, password_hash($pass, PASSWORD_DEFAULT));
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE users SET username='$user', password='$hashedPass' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -50,10 +50,10 @@ if (isset($_POST['update-user'])) {
 
 /* UPDATE MEDICAL----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-medical'])) {
-  $fullname = $_POST['fullname'];
-  $work = $_POST['work'];
-  $purpose = $_POST['purpose'];
-  $id = $_POST['update_id'];
+  $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $work = mysqli_real_escape_string($conn, $_POST['work']);
+  $purpose = mysqli_real_escape_string($conn, $_POST['purpose']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE medical SET fullname='$fullname', work='$work', purpose='$purpose' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -66,13 +66,13 @@ if (isset($_POST['update-medical'])) {
 
 /* UPDATE SCHOLARSHIP----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-scholarship'])) {
-  $fullname = $_POST['fullname'];
-  $mother = $_POST['mother'];
-  $workMother = $_POST['workMother'];
-  $father = $_POST['father'];
-  $workFather = $_POST['workFather'];
-  $earnings = $_POST['earnings'];
-  $id = $_POST['update_id'];
+  $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $mother = mysqli_real_escape_string($conn, $_POST['mother']);
+  $workMother = mysqli_real_escape_string($conn, $_POST['workMother']);
+  $father = mysqli_real_escape_string($conn, $_POST['father']);
+  $workFather = mysqli_real_escape_string($conn, $_POST['workFather']);
+  $earnings = mysqli_real_escape_string($conn, $_POST['earnings']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE scholarship SET fullname='$fullname', 
   mother='$mother', 
@@ -89,15 +89,15 @@ if (isset($_POST['update-scholarship'])) {
 
 /* UPDATE CLEARANCE----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-clearance'])) {
-  $fullname = $_POST['fullname'];
-  $age = $_POST['age'];
-  $abroad = $_POST['abroad'];
-  $loc = $_POST['loc'];
-  $scholarship = $_POST['scholarship'];
-  $policeClearance = $_POST['policeClearance'];
-  $nbi = $_POST['nbi'];
-  $loanPurposes = $_POST['loanPurposes'];
-  $id = $_POST['update_id'];
+  $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $age = mysqli_real_escape_string($conn, $_POST['age']);
+  $abroad = mysqli_real_escape_string($conn, $_POST['abroad']);
+  $loc = mysqli_real_escape_string($conn, $_POST['loc']);
+  $scholarship = mysqli_real_escape_string($conn, $_POST['scholarship']);
+  $policeClearance = mysqli_real_escape_string($conn, $_POST['policeClearance']);
+  $nbi = mysqli_real_escape_string($conn, $_POST['nbi']);
+  $loanPurposes = mysqli_real_escape_string($conn, $_POST['loanPurposes']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE brgyclearance SET fullname='$fullname', 
   age='$age', 
@@ -116,11 +116,11 @@ if (isset($_POST['update-clearance'])) {
 
 /* UPDATE BUSINESS CLEARANCE----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-business'])) {
-  $bname = $_POST['bname'];
-  $loc = $_POST['loc'];
-  $operator = $_POST['operator'];
-  $addr = $_POST['addr'];
-  $id = $_POST['update_id'];
+  $bname = mysqli_real_escape_string($conn, $_POST['bname']);
+  $loc = mysqli_real_escape_string($conn, $_POST['loc']);
+  $operator = mysqli_real_escape_string($conn, $_POST['operator']);
+  $addr = mysqli_real_escape_string($conn, $_POST['addr']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE business SET bname='$bname', loc='$loc', operator='$operator', addr='$addr' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -132,8 +132,8 @@ if (isset($_POST['update-business'])) {
 
 /* UPDATE RESIDENCY----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-residency'])) {
-  $fullname = $_POST['fullname'];
-  $id = $_POST['update_id'];
+  $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE residency SET fullname='$fullname' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -145,8 +145,8 @@ if (isset($_POST['update-residency'])) {
 
 /* UPDATE APPOINTMENTS----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-appointments'])) {
-  $textInputs = $_POST['textInputs'];
-  $id = $_POST['update_id'];
+  $textInputs = mysqli_real_escape_string($conn, $_POST['textInputs']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE appointments SET textInputs='$textInputs' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -158,12 +158,12 @@ if (isset($_POST['update-appointments'])) {
 
 /* UPDATE PUROK RANKING----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-purok-ranking'])) {
-  $fullname = $_POST['fullname'];
-  $age = $_POST['age'];
-  $gender = $_POST['gender'];
-  $address = $_POST['address'];
-  $sector = $_POST['sector'];
-  $id = $_POST['update_id'];
+  $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $age = mysqli_real_escape_string($conn, $_POST['age']);
+  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+  $address = mysqli_real_escape_string($conn, $_POST['address']);
+  $sector = mysqli_real_escape_string($conn, $_POST['sector']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE purokranking SET fullname='$fullname', age='$age', gender='$gender', address='$address', sector='$sector' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";
@@ -175,22 +175,22 @@ if (isset($_POST['update-purok-ranking'])) {
 
 /* UPDATE CENSUS----------------------------------------------------------------------------------------------------------------------------------------------- */
 if (isset($_POST['update-census'])) {
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
-  $middlename = $_POST['middlename'];
-  $no = $_POST['no'];
-  $street = $_POST['street'];
-  $sub = $_POST['sub'];
-  $city = $_POST['city'];
-  $province = $_POST['province'];
-  $dateofbirth = $_POST['dateofbirth'];
-  $placeofbirth = $_POST['placeofbirth'];
-  $sex = $_POST['sex'];
-  $civilstatus = $_POST['civilstatus'];
-  $occupation = $_POST['occupation'];
-  $citizenship = $_POST['citizenship'];
-  $relationship = $_POST['relationship'];
-  $id = $_POST['update_id'];
+  $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+  $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+  $middlename = mysqli_real_escape_string($conn, $_POST['middlename']);
+  $no = mysqli_real_escape_string($conn, $_POST['no']);
+  $street = mysqli_real_escape_string($conn, $_POST['street']);
+  $sub = mysqli_real_escape_string($conn, $_POST['sub']);
+  $city = mysqli_real_escape_string($conn, $_POST['city']);
+  $province = mysqli_real_escape_string($conn, $_POST['province']);
+  $dateofbirth = mysqli_real_escape_string($conn, $_POST['dateofbirth']);
+  $placeofbirth = mysqli_real_escape_string($conn, $_POST['placeofbirth']);
+  $sex = mysqli_real_escape_string($conn, $_POST['sex']);
+  $civilstatus = mysqli_real_escape_string($conn, $_POST['civilstatus']);
+  $occupation = mysqli_real_escape_string($conn, $_POST['occupation']);
+  $citizenship = mysqli_real_escape_string($conn, $_POST['citizenship']);
+  $relationship = mysqli_real_escape_string($conn, $_POST['relationship']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
 
   $conn->query("UPDATE census SET firstname='$firstname',lastname='$lastname',middlename='$middlename',no='$no',street='$street',sub='$sub',city='$city',province='$province', dateofbirth='$dateofbirth', placeofbirth='$placeofbirth', sex='$sex', civilstatus='$civilstatus', occupation='$occupation', citizenship='$citizenship', relationship='$relationship' WHERE id='$id'") or die($conn->error());
   $_SESSION['updated'] = "Item has been updated!";

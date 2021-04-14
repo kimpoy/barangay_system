@@ -34,9 +34,9 @@ function message_add_error()
 /* USER ------------------------------------------------------------------------------------------------------- */
 /* INDIGENCY MEDICAL  */
 if (isset($_POST['submit-med'])) {
-    $fullname = $_POST['fullname'];
-    $work = $_POST['work'];
-    $purpose = $_POST['purpose'];
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+    $work = mysqli_real_escape_string($conn, $_POST['work']);
+    $purpose = mysqli_real_escape_string($conn, $_POST['purpose']);
 
     $sql = "SELECT fullname FROM medical WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -66,12 +66,12 @@ if (isset($_POST['submit-med'])) {
 }
 /* INDIGENCY SCHOLARSHIP */
 if (isset($_POST['submit-scho'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $mother = strtolower($_POST['mother']);
-    $workMother = strtolower($_POST['workMother']);
-    $father = strtolower($_POST['father']);
-    $workFather = strtolower($_POST['workFather']);
-    $earnings = $_POST['earnings'];
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));;
+    $mother = mysqli_real_escape_string($conn, strtolower($_POST['mother']));
+    $workMother = mysqli_real_escape_string($conn, strtolower($_POST['workMother']));
+    $father = mysqli_real_escape_string($conn, strtolower($_POST['father']));
+    $workFather = mysqli_real_escape_string($conn, strtolower($_POST['workFather']));
+    $earnings = mysqli_real_escape_string($conn, $_POST['earnings']);
 
     $sql = "SELECT fullname FROM scholarship WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -101,10 +101,10 @@ if (isset($_POST['submit-scho'])) {
 }
 /* BUSINESS CLEARANCE  */
 if (isset($_POST['submit-business'])) {
-    $bname = strtolower($_POST['bname']);
-    $loc = strtolower($_POST['loc']);
-    $operator = strtolower($_POST['operator']);
-    $addr = strtolower($_POST['addr']);
+    $bname = mysqli_real_escape_string($conn, strtolower($_POST['bname']));
+    $loc = mysqli_real_escape_string($conn, strtolower($_POST['loc']));
+    $operator = mysqli_real_escape_string($conn, strtolower($_POST['operator']));
+    $addr = mysqli_real_escape_string($conn, strtolower($_POST['addr']));
 
     $sql = "SELECT bname FROM business WHERE bname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -134,7 +134,7 @@ if (isset($_POST['submit-business'])) {
 }
 /* RESIDENCY */
 if (isset($_POST['submit-residency'])) {
-    $fullname = strtolower($_POST['fullname']);
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
 
     $sql = "SELECT fullname FROM residency WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -164,14 +164,14 @@ if (isset($_POST['submit-residency'])) {
 }
 /* BRGY CLEARANCE */
 if (isset($_POST['submit-brgy'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $age = strtolower($_POST['age']);
-    $abroad = strtolower($_POST['abroad']);
-    $loc = strtolower($_POST['loc']);
-    $scholarship = strtolower($_POST['scholarship']);
-    $policeClearance = strtolower($_POST['policeClearance']);
-    $nbi = strtolower($_POST['nbi']);
-    $loanPurposes = strtolower($_POST['loanPurposes']);
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
+    $age = mysqli_real_escape_string($conn, strtolower($_POST['age']));
+    $abroad = mysqli_real_escape_string($conn, strtolower($_POST['abroad']));
+    $loc = mysqli_real_escape_string($conn, strtolower($_POST['loc']));
+    $scholarship = mysqli_real_escape_string($conn, strtolower($_POST['scholarship']));
+    $policeClearance = mysqli_real_escape_string($conn, strtolower($_POST['policeClearance']));
+    $nbi = mysqli_real_escape_string($conn, strtolower($_POST['nbi']));
+    $loanPurposes = mysqli_real_escape_string($conn, strtolower($_POST['loanPurposes']));
 
     $sql = "SELECT fullname FROM brgyClearance WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -201,7 +201,7 @@ if (isset($_POST['submit-brgy'])) {
 }
 /* APPOINTMENTS */
 if (isset($_POST['submit-appointments'])) {
-    $textInputs = strtolower($_POST['textInputs']);
+    $textInputs = mysqli_real_escape_string($conn, strtolower($_POST['textInputs']));
 
     $sql = "SELECT textInputs FROM appointments WHERE textInputs = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -232,9 +232,9 @@ if (isset($_POST['submit-appointments'])) {
 /* ADMIN ------------------------------------------------------------------------------------------------------- */
 /* INDIGENCY MEDICAL ADMIN  */
 if (isset($_POST['submit-med-admin'])) {
-    $fullname = $_POST['fullname'];
-    $work = $_POST['work'];
-    $purpose = $_POST['purpose'];
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+    $work = mysqli_real_escape_string($conn, $_POST['work']);
+    $purpose = mysqli_real_escape_string($conn, $_POST['purpose']);
 
     $sql = "SELECT fullname FROM medical WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -264,12 +264,12 @@ if (isset($_POST['submit-med-admin'])) {
 }
 /* INDIGENCY SCHOLARSHIP ADMIN */
 if (isset($_POST['submit-scho-admin'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $mother = strtolower($_POST['mother']);
-    $workMother = strtolower($_POST['workMother']);
-    $father = strtolower($_POST['father']);
-    $workFather = strtolower($_POST['workFather']);
-    $earnings = $_POST['earnings'];
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
+    $mother = mysqli_real_escape_string($conn, strtolower($_POST['mother']));
+    $workMother = mysqli_real_escape_string($conn, strtolower($_POST['workMother']));
+    $father = mysqli_real_escape_string($conn, strtolower($_POST['father']));
+    $workFather = mysqli_real_escape_string($conn, strtolower($_POST['workFather']));
+    $earnings = mysqli_real_escape_string($conn, $_POST['earnings']);
 
     $sql = "SELECT fullname FROM scholarship WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -299,10 +299,10 @@ if (isset($_POST['submit-scho-admin'])) {
 }
 /* BUSINESS CLEARANCE ADMIN */
 if (isset($_POST['submit-business-admin'])) {
-    $bname = strtolower($_POST['bname']);
-    $loc = strtolower($_POST['loc']);
-    $operator = strtolower($_POST['operator']);
-    $addr = strtolower($_POST['addr']);
+    $bname = mysqli_real_escape_string($conn, strtolower($_POST['bname']));
+    $loc = mysqli_real_escape_string($conn, strtolower($_POST['loc']));
+    $operator = mysqli_real_escape_string($conn, strtolower($_POST['operator']));
+    $addr = mysqli_real_escape_string($conn, strtolower($_POST['addr']));
 
     $sql = "SELECT bname FROM business WHERE bname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -332,7 +332,7 @@ if (isset($_POST['submit-business-admin'])) {
 }
 /* RESIDENCY ADMIN */
 if (isset($_POST['submit-residency-admin'])) {
-    $fullname = strtolower($_POST['fullname']);
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
 
     $sql = "SELECT fullname FROM residency WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -362,14 +362,14 @@ if (isset($_POST['submit-residency-admin'])) {
 }
 /* BRGY CLEARANCE ADMIN */
 if (isset($_POST['submit-brgy-admin'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $age = strtolower($_POST['age']);
-    $abroad = strtolower($_POST['abroad']);
-    $loc = strtolower($_POST['loc']);
-    $scholarship = strtolower($_POST['scholarship']);
-    $policeClearance = strtolower($_POST['policeClearance']);
-    $nbi = strtolower($_POST['nbi']);
-    $loanPurposes = strtolower($_POST['loanPurposes']);
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
+    $age = mysqli_real_escape_string($conn, strtolower($_POST['age']));
+    $abroad = mysqli_real_escape_string($conn, strtolower($_POST['abroad']));
+    $loc = mysqli_real_escape_string($conn, strtolower($_POST['loc']));
+    $scholarship = mysqli_real_escape_string($conn, strtolower($_POST['scholarship']));
+    $policeClearance = mysqli_real_escape_string($conn, strtolower($_POST['policeClearance']));
+    $nbi = mysqli_real_escape_string($conn, strtolower($_POST['nbi']));
+    $loanPurposes = mysqli_real_escape_string($conn, strtolower($_POST['loanPurposes']));
 
     $sql = "SELECT fullname FROM brgyClearance WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -399,7 +399,7 @@ if (isset($_POST['submit-brgy-admin'])) {
 }
 /* APPOINTMENTS ADMIN */
 if (isset($_POST['submit-appointments-admin'])) {
-    $textInputs = strtolower($_POST['textInputs']);
+    $textInputs = mysqli_real_escape_string($conn, strtolower($_POST['textInputs']));
 
     $sql = "SELECT textInputs FROM appointments WHERE textInputs = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -430,11 +430,11 @@ if (isset($_POST['submit-appointments-admin'])) {
 
 /* PUROK RANKING */
 if (isset($_POST['submit-purok-ranking'])) {
-    $fullname = strtolower($_POST['fullname']);
-    $age = strtolower($_POST['age']);
-    $gender = strtolower($_POST['gender']);
-    $address = strtolower($_POST['address']);
-    $sector = strtolower($_POST['sector']);
+    $fullname = mysqli_real_escape_string($conn, strtolower($_POST['fullname']));
+    $age = mysqli_real_escape_string($conn, strtolower($_POST['age']));
+    $gender = mysqli_real_escape_string($conn, strtolower($_POST['gender']));
+    $address = mysqli_real_escape_string($conn, strtolower($_POST['address']));
+    $sector = mysqli_real_escape_string($conn, strtolower($_POST['sector']));
 
     $sql = "SELECT fullname FROM purokranking WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -466,21 +466,21 @@ if (isset($_POST['submit-purok-ranking'])) {
 
 /* CENSUS */
 if (isset($_POST['submit-census'])) {
-    $firstname = strtolower($_POST['firstname']);
-    $lastname = strtolower($_POST['lastname']);
-    $middlename = strtolower($_POST['middlename']);
-    $no = strtolower($_POST['no']);
-    $street = strtolower($_POST['street']);
-    $sub = strtolower($_POST['sub']);
-    $city = strtolower($_POST['city']);
-    $province = strtolower($_POST['province']);
-    $dateofbirth = strtolower($_POST['dateofbirth']);
-    $placeofbirth = strtolower($_POST['placeofbirth']);
-    $sex = strtolower($_POST['sex']);
-    $civilstatus = strtolower($_POST['civilstatus']);
-    $occupation = strtolower($_POST['occupation']);
-    $citizenship = strtolower($_POST['citizenship']);
-    $relationship = strtolower($_POST['relationship']);
+    $firstname = mysqli_real_escape_string($conn, strtolower($_POST['firstname']));
+    $lastname = mysqli_real_escape_string($conn, strtolower($_POST['lastname']));
+    $middlename = mysqli_real_escape_string($conn, strtolower($_POST['middlename']));
+    $no = mysqli_real_escape_string($conn, strtolower($_POST['no']));
+    $street = mysqli_real_escape_string($conn, strtolower($_POST['street']));
+    $sub = mysqli_real_escape_string($conn, strtolower($_POST['sub']));
+    $city = mysqli_real_escape_string($conn, strtolower($_POST['city']));
+    $province = mysqli_real_escape_string($conn, strtolower($_POST['province']));
+    $dateofbirth = mysqli_real_escape_string($conn, strtolower($_POST['dateofbirth']));
+    $placeofbirth = mysqli_real_escape_string($conn, strtolower($_POST['placeofbirth']));
+    $sex = mysqli_real_escape_string($conn, strtolower($_POST['sex']));
+    $civilstatus = mysqli_real_escape_string($conn, strtolower($_POST['civilstatus']));
+    $occupation = mysqli_real_escape_string($conn, strtolower($_POST['occupation']));
+    $citizenship = mysqli_real_escape_string($conn, strtolower($_POST['citizenship']));
+    $relationship = mysqli_real_escape_string($conn, strtolower($_POST['relationship']));
 
     $sql = "SELECT fullname FROM census WHERE fullname = ?";
     $stmt = mysqli_stmt_init($conn);
