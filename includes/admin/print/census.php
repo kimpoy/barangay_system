@@ -56,22 +56,22 @@
             </div>
             <div class="to-left">
                 <h4 class="box-content">Address</h4>
-                <p>No. </p>
+                <p class="box-content">No. </p>
                 <input class="field-form box-content" style="width: 5em;" type="text" value="<?php echo $_GET['no']; ?>" readonly>
-                <p>Street </p>
+                <p class="box-content">Street </p>
                 <input class="field-form box-content" style="width: 10em;" type="text" value="<?php echo $_GET['street']; ?>" readonly>
-                <p>Subdivision/Zone/Sitio/Purok </p>
+                <p class="box-content">Subdivision/Zone/Sitio/Purok </p>
                 <input class="field-form box-content" style="width: 10em;" type="text" value="<?php echo $_GET['sub']; ?>" readonly>
             </div>
             <div class="to-left">
-                <p>City/Municipality </p>
+                <p class="box-content">City/Municipality </p>
                 <input class="field-form box-content" style="width: 10em;" type="text" value="<?php echo $_GET['city']; ?>" readonly>
-                <p>Province </p>
+                <p class="box-content">Province</p>
                 <input class="field-form box-content" style="width: 10em;" type="text" value="<?php echo $_GET['province']; ?>" readonly>
             </div>
             <div class="to-left">
                 <h4 class="box-content">Date of Birth</h4>
-                <p>mm-dd-yyyy </p>
+                <p class="box-content">mm-dd-yyyy </p>
                 <input class="field-form box-content" style="width: 10em;" type="text" value="<?php echo $_GET['dateofbirth']; ?>" readonly>
             </div>
             <div class="to-left">
