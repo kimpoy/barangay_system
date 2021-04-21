@@ -42,6 +42,7 @@ if ($_SESSION['type'] != 'user') {
         <ul class="navbar-nav justify-content-end ">
             <li class="nav-item active"><a class="nav-link" href="user_index.php">Home</a></li>
             <li class="nav-item active"><a class="nav-link" href="about.php">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="change.php">Change Password</a></li>
             <!--<li class="nav-item active"><a class="nav-link" href="logout-admin.php">Logout</a></li> -->
         </ul>
         <a class="btn btn-success ml-auto mr-1" href="logout.php">Logout</a>

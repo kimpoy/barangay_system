@@ -44,6 +44,7 @@ if (isset($_POST['submit']) && $_POST['type'] == 'user') {
                         /* $_SESSION['sessionId'] = $row['id']; */
                         $_SESSION['sessionUser'] = $row['username'];
                         $_SESSION['type'] = $row['usertype'];
+                        $_SESSION['id'] = $row['id'];
                         header("Location: user_index.php?success=loggedin");
                         exit();
                     } else {
@@ -59,7 +60,7 @@ if (isset($_POST['submit']) && $_POST['type'] == 'user') {
                 echo '<div class="alert alert-danger alert-dismissible fade show">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>ERROR!</strong> No User Found
-                        </div>';;
+                        </div>';
             }
         }
     }
