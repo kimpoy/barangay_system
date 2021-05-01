@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <div class="print-wrapper">
         <button class="button print-button" id="doPrint">Print</button>
     </div>
@@ -31,46 +32,50 @@
         <div class="content-wrapper">
             <!-- left side -->
             <div class="left-content">
-                <div class="title">
-                    <h3>BARANGAY OFFICIALS</h3>
-                </div>
-                <h4>Hon. WILFREDO F. MUSNGI</h4>
-                <p>Punong Barangay</p>
-                <div class="title">
+                <?php
+                $mysqli = new mysqli('localhost', 'root', '', 'brgydb') or die(mysqli_error($mysqli));
+                $result = $mysqli->query("SELECT * FROM officials") or die($mysqli->error);
+                ?>
+                <?php
+                while ($row = $result->fetch_assoc()) :
+                ?>
+                    <h3 class="brgy-official">BARANGAY OFFICIALS</h3>
+                    <h4><?php echo $row['chairman']; ?></h4>
+                    <p>Punong Barangay</p>
                     <h3>KAGAWAD:</h3>
-                </div>
-                <h4>Hon. NOEL M. DELA CRUZ</h4>
-                <p>Committee on Agriculture</p>
-                <h4>Hon. LAURENCIO M. BUCAD</h4>
-                <p>Committee on Education</p>
-                <h4>Hon. AMELITO M. MUSNGI JR.</h4>
-                <p>Committee on Appropriations</p>
-                <h4>Hon. DOMINADOR C. DELA CRUZ</h4>
-                <p>Committee on Public Works & Infrastructure </p>
-                <h4>Hon. ALBERTO P. MACAPINLAC</h4>
-                <p>Committee on Peace & Order</p>
-                <h4>Hon. CARMELITA M. MACALINO</h4>
-                <p>Committee on Health</p>
-                <h4>Hon. ANALYN N. CUNANAN</h4>
-                <p>Committee on Environmental Protection</p>
-                <h4>MS. JOJI R. SUBA</h4>
-                <p>Barangay Treasurer</p>
-                <h4>Ms. FLORDELYN V. GREGORIO</h4>
-                <p>Barangay Secretary</p>
-                <div class="ctc-wrapper">
-                    <div>
-                        <label for="ctc">CTC No.</label>
-                        <input type="text" name="ctc" id="ctc" value="">
+                    <h4><?php echo $row['agriculture']; ?></h4>
+                    <p>Committee on Agriculture</p>
+                    <h4><?php echo $row['education']; ?></h4>
+                    <p>Committee on Education</p>
+                    <h4><?php echo $row['appropriations']; ?></h4>
+                    <p>Committee on Appropriations</p>
+                    <h4><?php echo $row['infrastructure']; ?></h4>
+                    <p>Committee on Public Works & Infrastructure </p>
+                    <h4><?php echo $row['peace']; ?></h4>
+                    <p>Committee on Peace & Order</p>
+                    <h4><?php echo $row['health']; ?></h4>
+                    <p>Committee on Health</p>
+                    <h4><?php echo $row['protection']; ?></h4>
+                    <p>Committee on Environmental Protection</p>
+                    <h4><?php echo $row['treasurer']; ?></h4>
+                    <p>Barangay Treasurer</p>
+                    <h4><?php echo $row['secretary']; ?></h4>
+                    <p>Barangay Secretary</p>
+
+                    <div class="ctc-wrapper">
+                        <div>
+                            <label for="ctc">CTC No.</label>
+                            <input type="text" name="ctc" id="ctc" value="">
+                        </div>
+                        <div>
+                            <label for="ison">Issued on:</label>
+                            <input type="text" name="ison" id="ison" value="">
+                        </div>
+                        <div>
+                            <label for="isat">Issued at:</label>
+                            <input type="text" name="isat" id="isat" value="">
+                        </div>
                     </div>
-                    <div>
-                        <label for="ison">Issued on:</label>
-                        <input type="text" name="ison" id="ison" value="">
-                    </div>
-                    <div>
-                        <label for="isat">Issued at:</label>
-                        <input type="text" name="isat" id="isat" value="">
-                    </div>
-                </div>
             </div>
 
             <!-- right side -->
@@ -183,14 +188,14 @@
 
                 </div>
                 <div class="right-content-sign">
-                    <h3>Hon. WILFREDO F. MUSNGI</h3>
+                    <h3><?php echo $row['chairman']; ?></h3>
                     <p>Punong Barangay</p>
                 </div>
 
                 <p class="p">Prepared by:</p>
-                <h3>Ms. FLORDELYN V. GREGORIO</h3>
+                <h3><?php echo $row['secretary']; ?></h3>
                 <p class="bottom-p">Barangay Secretary </p>
-
+            <?php endwhile; ?>
 
             </div>
         </div>

@@ -23,6 +23,7 @@
             <li class="nav-item active"><a class="nav-link" href="admin_setting.php">Admin</a></li>
             <li class="nav-item active"><a class="nav-link" href="user.php">User</a></li>
             <li class="nav-item active"><a class="nav-link" href="census.php">Census</a></li>
+            <li class="nav-item active"><a class="nav-link" href="officials.php">Officials</a></li>
             <li class="nav-item active"><a class="nav-link" href="About.php">About</a></li>
         </ul>
         <a class="btn btn-success ml-auto mr-1" href="../logout.php">Logout</a>

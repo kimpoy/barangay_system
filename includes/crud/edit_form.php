@@ -199,3 +199,26 @@ if (isset($_POST['update-census'])) {
 
   $conn->close();
 }
+
+/* UPDATE BRGY OFFICIALS----------------------------------------------------------------------------------------------------------------------------------------------- */
+if (isset($_POST['update-officials'])) {
+  $chairman = mysqli_real_escape_string($conn, $_POST['chairman']);
+  $agriculture = mysqli_real_escape_string($conn, $_POST['agriculture']);
+  $education = mysqli_real_escape_string($conn, $_POST['education']);
+  $appropriations = mysqli_real_escape_string($conn, $_POST['appropriations']);
+  $infrastructure = mysqli_real_escape_string($conn, $_POST['infrastructure']);
+
+  $peace = mysqli_real_escape_string($conn, $_POST['peace']);
+  $health = mysqli_real_escape_string($conn, $_POST['health']);
+  $protection = mysqli_real_escape_string($conn, $_POST['protection']);
+  $treasurer = mysqli_real_escape_string($conn, $_POST['treasurer']);
+  $secretary = mysqli_real_escape_string($conn, $_POST['secretary']);
+  $id = mysqli_real_escape_string($conn, $_POST['update_id']);
+
+  $conn->query("UPDATE officials SET chairman='$chairman', agriculture='$agriculture', education='$education', appropriations='$appropriations', infrastructure='$infrastructure', peace='$peace', health='$health', protection='$protection', treasurer='$treasurer', secretary='$secretary' WHERE id='$id'") or die($conn->error());
+  $_SESSION['updated'] = "Item has been updated!";
+  header("Location: officials.php");
+  exit();
+
+  $conn->close();
+}
