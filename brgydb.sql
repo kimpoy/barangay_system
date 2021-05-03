@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2021 at 06:13 PM
+-- Generation Time: May 03, 2021 at 07:34 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -178,6 +178,33 @@ INSERT INTO `medical` (`id`, `fullname`, `work`, `purpose`, `date`, `month`, `ye
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `officials`
+--
+
+CREATE TABLE `officials` (
+  `id` int(11) NOT NULL,
+  `chairman` varchar(255) NOT NULL,
+  `agriculture` varchar(255) NOT NULL,
+  `education` varchar(255) NOT NULL,
+  `appropriations` varchar(255) NOT NULL,
+  `infrastructure` varchar(255) NOT NULL,
+  `peace` varchar(255) NOT NULL,
+  `health` varchar(255) NOT NULL,
+  `protection` varchar(255) NOT NULL,
+  `treasurer` varchar(255) NOT NULL,
+  `secretary` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `officials`
+--
+
+INSERT INTO `officials` (`id`, `chairman`, `agriculture`, `education`, `appropriations`, `infrastructure`, `peace`, `health`, `protection`, `treasurer`, `secretary`) VALUES
+(1, 'Hon. WILFREDO F. MUSNGI', 'Hon. NOEL M. DELA CRUZ', 'Hon. LAURENCIO M. BUCAD', 'Hon. AMELITO M. MUSNGI JR.', 'Hon. DOMINADOR C. DELA CRUZ', 'Hon. ALBERTO P. MACAPINLAC', 'Hon. CARMELITA M. MACALINO', 'Hon. ANALYN N. CUNANAN', 'MS. JOJI R. SUBA', 'Ms. FLORDELYN V. GREGORIO');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `purokranking`
 --
 
@@ -289,9 +316,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `usertype`) VALUES
 (34, 'admin', '$2y$10$spADwQfyetDaBIoTP3fnb.l/3MTdkgVWzznZBzqmnEAuyphFLWgf2', 'admin'),
-(102, 'user', '$2y$10$V6k6Mepmk0bGi6rK2TECrebOLQG9Uno/YdpjWOMp2wBgv8nxq.cA6', 'user'),
+(102, 'user', '$2y$10$wVgp2IpVmi1qmIFrJX8WVOs7wVt10heQQhj7gpYt.hzbfyUt4sO26', 'user'),
 (109, 'user', '$2y$10$4y9XaaDtA.6tvFbKIMFEvOnbN0JFqU.lusVYULG6cbf8eehPRRpMK', 'admin'),
-(110, 'admin', '$2y$10$S4NHwTRh9ztq0CD6LyWZKOAkRwuKjvCryNwn0BJHRVvw/M1rk3qqG', 'user');
+(110, 'admin', '$2y$10$S4NHwTRh9ztq0CD6LyWZKOAkRwuKjvCryNwn0BJHRVvw/M1rk3qqG', 'user'),
+(111, 'nuser', '$2y$10$1Nowe/TeUMhtHLlCqAmKzuEwtoJrwFXdRP8xHvMxpzCETohrd44ai', 'user');
 
 --
 -- Indexes for dumped tables
@@ -325,6 +353,12 @@ ALTER TABLE `census`
 -- Indexes for table `medical`
 --
 ALTER TABLE `medical`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `officials`
+--
+ALTER TABLE `officials`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -386,6 +420,12 @@ ALTER TABLE `medical`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
+-- AUTO_INCREMENT for table `officials`
+--
+ALTER TABLE `officials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `purokranking`
 --
 ALTER TABLE `purokranking`
@@ -407,7 +447,7 @@ ALTER TABLE `scholarship`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
