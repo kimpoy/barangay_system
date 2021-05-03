@@ -43,44 +43,44 @@ $result = $mysqli->query("SELECT * FROM officials") or die($mysqli->error);
         <form action="#" method="post">
             <input type="hidden" name="update_id" id="update_id" value="<?php echo $row['id']; ?>">
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="chairman" name="chairman" class="form-control" value="<?php echo $row['chairman']; ?>" placeholder="Punong Barangay" disabled>
+
+                <input type="text" id="chairman" name="chairman" class="form-control" value="<?php echo $row['chairman']; ?>" placeholder="Punong Barangay">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="agriculture" name="agriculture" class="form-control" value="<?php echo $row['agriculture']; ?>" placeholder="Committee on Agriculture" disabled>
+
+                <input type="text" id="agriculture" name="agriculture" class="form-control" value="<?php echo $row['agriculture']; ?>" placeholder="Committee on Agriculture">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="education" name="education" class="form-control" value="<?php echo $row['education']; ?>" placeholder="Committee on Education" disabled>
+
+                <input type="text" id="education" name="education" class="form-control" value="<?php echo $row['education']; ?>" placeholder="Committee on Education">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="appropriations" name="appropriations" class="form-control" value="<?php echo $row['appropriations']; ?>" placeholder="Committee on Appropriations" disabled>
+
+                <input type="text" id="appropriations" name="appropriations" class="form-control" value="<?php echo $row['appropriations']; ?>" placeholder="Committee on Appropriations">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="infrastructure" name="infrastructure" class="form-control" value="<?php echo $row['infrastructure']; ?>" placeholder="Committee on Public Works & Infrastructure" disabled>
+
+                <input type="text" id="infrastructure" name="infrastructure" class="form-control" value="<?php echo $row['infrastructure']; ?>" placeholder="Committee on Public Works & Infrastructure">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="peace" name="peace" class="form-control" value="<?php echo $row['peace']; ?>" placeholder="Committee on Peace & Order" disabled>
+
+                <input type="text" id="peace" name="peace" class="form-control" value="<?php echo $row['peace']; ?>" placeholder="Committee on Peace & Order">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="health" name="health" class="form-control" value="<?php echo $row['health']; ?>" placeholder="Committee on Health" disabled>
+
+                <input type="text" id="health" name="health" class="form-control" value="<?php echo $row['health']; ?>" placeholder="Committee on Health">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="protection" name="protection" class="form-control" value="<?php echo $row['protection']; ?>" placeholder="Committee on Environmental Protection" disabled>
+
+                <input type="text" id="protection" name="protection" class="form-control" value="<?php echo $row['protection']; ?>" placeholder="Committee on Environmental Protection">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="treasurer" name="treasurer" class="form-control" value="<?php echo $row['treasurer']; ?>" placeholder="Barangay Treasurer" disabled>
+
+                <input type="text" id="treasurer" name="treasurer" class="form-control" value="<?php echo $row['treasurer']; ?>" placeholder="Barangay Treasurer">
             </div>
             <div class="form-group d-flex">
-                <input type="checkbox" id="box" class="form-check-input " style="align-self: center; cursor:pointer;">
-                <input type="text" id="secretary" name="secretary" class="form-control" value="<?php echo $row['secretary']; ?>" placeholder="Barangay Secretary" disabled>
+
+                <input type="text" id="secretary" name="secretary" class="form-control" value="<?php echo $row['secretary']; ?>" placeholder="Barangay Secretary">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary" name="update-officials">Update</button>
@@ -89,7 +89,7 @@ $result = $mysqli->query("SELECT * FROM officials") or die($mysqli->error);
     <?php endwhile; ?>
 </div>
 
-<script>
+<!-- <script>
     /*     document.getElementById('chairmanBox').onchange = function() {
         document.getElementById('chairman').disabled = !this.checked;
     }; */
@@ -150,7 +150,7 @@ $result = $mysqli->query("SELECT * FROM officials") or die($mysqli->error);
         }
 
     }
-</script>
+</script> -->
 </body>
 
 </html>
